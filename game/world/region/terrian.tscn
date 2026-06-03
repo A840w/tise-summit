@@ -1,5 +1,39 @@
 [gd_scene format=3 uid="uid://r1niw4vutqt2"]
 
+[ext_resource type="Texture2D" uid="uid://u7yc3hlwtgan" path="res://assets/enviroments/kiara_1_dawn_4k.exr" id="1_jfmj3"]
+[ext_resource type="Texture2D" uid="uid://c3pn86huqm4ht" path="res://assets/arts/terrian/01/grass_12_chnnelpkd.png" id="1_md0o6"]
+[ext_resource type="Texture2D" uid="uid://bm2fuauvdmiwo" path="res://assets/arts/terrian/01/grass_12_chnnelpkd_Nrm.png" id="2_woysr"]
+[ext_resource type="Texture2D" uid="uid://xm4acalwqqiw" path="res://assets/arts/terrian/01/grass_11_chnnelpkd.png" id="3_88ae5"]
+[ext_resource type="Texture2D" uid="uid://bopd22h1ewpuw" path="res://assets/arts/terrian/01/grass_11_chnnelpkd_nrm.png" id="4_n1jro"]
+[ext_resource type="Texture2D" uid="uid://cokan3vciah26" path="res://assets/arts/terrian/01/grass_2_chnnelpkd.png" id="5_ci7ac"]
+[ext_resource type="Texture2D" uid="uid://hgjk0m3b0gux" path="res://assets/arts/terrian/01/grass_2_chnnelpkd_nrm.png" id="6_ykhmh"]
+[ext_resource type="Texture2D" uid="uid://dtm87ujlb636w" path="res://assets/arts/terrian/01/dirt_04_chnnelpkd.png" id="7_w3yiw"]
+[ext_resource type="Texture2D" uid="uid://dcupivl2lbuwv" path="res://assets/arts/terrian/01/dirt_04_chnnelpkd_nrm.png" id="8_tuve5"]
+[ext_resource type="Texture2D" uid="uid://caetn3vc8qcrn" path="res://assets/arts/terrian/01/grass_4_chnnelpkd.png" id="9_5eft3"]
+[ext_resource type="Texture2D" uid="uid://cx82cerxue5k" path="res://assets/arts/terrian/01/grass_4_chnnelpkd_nrm.png" id="10_m3bgh"]
+[ext_resource type="PackedScene" uid="uid://c360x350e8oag" path="res://game/actors/player/player.tscn" id="11_m3bgh"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5ght3"]
+panorama = ExtResource("1_jfmj3")
+
+[sub_resource type="Sky" id="Sky_jfmj3"]
+sky_material = SubResource("PanoramaSkyMaterial_5ght3")
+
+[sub_resource type="Environment" id="Environment_5ght3"]
+background_mode = 2
+sky = SubResource("Sky_jfmj3")
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+volumetric_fog_density = 0.016
+volumetric_fog_albedo = Color(0.5449743, 0.54497427, 0.54497427, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_e5x1b"]
+
 [sub_resource type="Gradient" id="Gradient_7guqr"]
 offsets = PackedFloat32Array(0.2, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -31,7 +65,7 @@ _shader_parameters = {
 &"flat_terrain_normals": null,
 &"macro_variation1": null,
 &"macro_variation2": null,
-&"macro_variation_slope": null,
+&"macro_variation_slope": 0.333,
 &"mipmap_bias": null,
 &"noise1_angle": null,
 &"noise1_offset": null,
@@ -40,7 +74,7 @@ _shader_parameters = {
 &"noise_texture": SubResource("NoiseTexture2D_md0o6"),
 &"projection_threshold": null
 }
-show_checkered = true
+world_background = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88ae5"]
 transparency = 4
@@ -60,15 +94,70 @@ last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
 
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_88ae5"]
+name = "grass_12"
+albedo_texture = ExtResource("1_md0o6")
+normal_texture = ExtResource("2_woysr")
+roughness = 0.059
+uv_scale = 0.604
+detiling_rotation = 0.265
+detiling_shift = 0.231
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_ci7ac"]
+name = "grass_11"
+id = 1
+albedo_texture = ExtResource("3_88ae5")
+normal_texture = ExtResource("4_n1jro")
+normal_depth = 0.172
+ao_strength = 0.475
+roughness = 0.109
+uv_scale = 0.402
+detiling_rotation = 0.08
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_w3yiw"]
+name = "grass_2"
+id = 2
+albedo_texture = ExtResource("5_ci7ac")
+normal_texture = ExtResource("6_ykhmh")
+roughness = 0.21
+uv_scale = 0.469
+detiling_rotation = 0.189
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_5eft3"]
+name = "dirt_04"
+id = 3
+albedo_texture = ExtResource("7_w3yiw")
+normal_texture = ExtResource("8_tuve5")
+roughness = 0.261
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_jfmj3"]
+name = "grass_4"
+id = 4
+albedo_texture = ExtResource("9_5eft3")
+normal_texture = ExtResource("10_m3bgh")
+roughness = 0.16
+uv_scale = 0.461
+
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_ci7ac"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_n1jro")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_88ae5"), SubResource("Terrain3DTextureAsset_ci7ac"), SubResource("Terrain3DTextureAsset_w3yiw"), SubResource("Terrain3DTextureAsset_5eft3"), SubResource("Terrain3DTextureAsset_jfmj3")])
 
 [node name="terrian" type="Node3D" unique_id=531803863]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1868393663]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1000718009]
+environment = SubResource("Environment_5ght3")
+camera_attributes = SubResource("CameraAttributesPractical_e5x1b")
 
 [node name="Terrain3D" type="Terrain3D" parent="." unique_id=1571990748]
 data_directory = "res://game/world/terrian/data/01"
 material = SubResource("Terrain3DMaterial_woysr")
 assets = SubResource("Terrain3DAssets_ci7ac")
-show_checkered = true
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="player" parent="." unique_id=489851307 instance=ExtResource("11_m3bgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.6009, 71.81169, 53.933346)
