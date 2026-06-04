@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://r1niw4vutqt2"]
 
-[ext_resource type="Texture2D" uid="uid://34bbw2ln4s3y" path="res://assets/enviroments/sunset_fairway_2k.exr" id="1_jfmj3"]
 [ext_resource type="Texture2D" uid="uid://c3pn86huqm4ht" path="res://assets/arts/terrian/01/grass_12_chnnelpkd.png" id="1_md0o6"]
 [ext_resource type="Texture2D" uid="uid://bm2fuauvdmiwo" path="res://assets/arts/terrian/01/grass_12_chnnelpkd_Nrm.png" id="2_woysr"]
 [ext_resource type="Texture2D" uid="uid://xm4acalwqqiw" path="res://assets/arts/terrian/01/grass_11_chnnelpkd.png" id="3_88ae5"]
@@ -13,26 +12,22 @@
 [ext_resource type="Texture2D" uid="uid://cx82cerxue5k" path="res://assets/arts/terrian/01/grass_4_chnnelpkd_nrm.png" id="10_m3bgh"]
 [ext_resource type="PackedScene" uid="uid://c360x350e8oag" path="res://game/actors/player/player.tscn" id="11_m3bgh"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5ght3"]
-panorama = ExtResource("1_jfmj3")
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_m3bgh"]
+mie_color = Color(0.79193276, 0.5271681, 0.35003835, 1)
 
 [sub_resource type="Sky" id="Sky_jfmj3"]
-sky_material = SubResource("PanoramaSkyMaterial_5ght3")
+sky_material = SubResource("PhysicalSkyMaterial_m3bgh")
 
 [sub_resource type="Environment" id="Environment_5ght3"]
 background_mode = 2
 sky = SubResource("Sky_jfmj3")
 tonemap_mode = 3
-sdfgi_use_occlusion = true
-fog_light_color = Color(0.66341424, 0.530506, 0.5850505, 1)
-volumetric_fog_density = 0.02
-volumetric_fog_albedo = Color(0.48570347, 0.48570353, 0.48570347, 1)
-volumetric_fog_emission = Color(0.639242, 0.4891966, 0.5810974, 1)
-volumetric_fog_emission_energy = 2.15
-volumetric_fog_temporal_reprojection_amount = 0.918
-adjustment_enabled = true
-adjustment_brightness = 0.82
-adjustment_contrast = 1.15
+fog_light_color = Color(0.6523004, 0.51144654, 0.49013233, 1)
+fog_sun_scatter = 0.09
+fog_density = 0.0683
+fog_aerial_perspective = 0.825
+volumetric_fog_albedo = Color(0.82076836, 0.7213381, 0.78255385, 1)
+volumetric_fog_detail_spread = 1.319508
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_e5x1b"]
 
@@ -98,22 +93,24 @@ lod0_range = 128.0
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_88ae5"]
 name = "grass_12"
+albedo_color = Color(0.8992584, 0.8992584, 0.8992584, 1)
 albedo_texture = ExtResource("1_md0o6")
 normal_texture = ExtResource("2_woysr")
-roughness = 0.059
-uv_scale = 0.5
+roughness = 1.0
+uv_scale = 0.676
 detiling_rotation = 0.265
 detiling_shift = 0.231
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_ci7ac"]
 name = "grass_11"
 id = 1
+albedo_color = Color(0.8732984, 0.8732984, 0.8732984, 1)
 albedo_texture = ExtResource("3_88ae5")
 normal_texture = ExtResource("4_n1jro")
 normal_depth = 0.172
 ao_strength = 0.475
 roughness = 0.109
-uv_scale = 0.402
+uv_scale = 0.814
 detiling_rotation = 0.08
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_w3yiw"]
@@ -122,23 +119,28 @@ id = 2
 albedo_texture = ExtResource("5_ci7ac")
 normal_texture = ExtResource("6_ykhmh")
 roughness = 0.21
-uv_scale = 0.469
+uv_scale = 0.696
 detiling_rotation = 0.189
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_5eft3"]
 name = "dirt_04"
 id = 3
+albedo_color = Color(0.75762784, 0.75762784, 0.75762784, 1)
 albedo_texture = ExtResource("7_w3yiw")
 normal_texture = ExtResource("8_tuve5")
-roughness = 0.261
+normal_depth = 0.777
+ao_strength = 0.559
+roughness = 0.794
+uv_scale = 0.587
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_jfmj3"]
 name = "grass_4"
 id = 4
+albedo_color = Color(0.9357826, 0.8612302, 0.71437997, 1)
 albedo_texture = ExtResource("9_5eft3")
 normal_texture = ExtResource("10_m3bgh")
 roughness = 0.315
-uv_scale = 0.814
+uv_scale = 1.024
 detiling_rotation = 0.065
 detiling_shift = 0.088
 
@@ -148,15 +150,14 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 
 [node name="terrian" type="Node3D" unique_id=531803863]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1868393663]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_intensity_lux = 61448.6
-light_temperature = 2509.0
-light_color = Color(0.81131476, 0.44793707, 0.88487047, 1)
-light_energy = 1.065
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1528475928]
+transform = Transform3D(-0.8660253, -0.19536565, 0.4602525, 0.3986393, 0.28584185, 0.8714247, -0.301806, 0.9381509, -0.16966584, 0, 0, 4.501995)
+light_intensity_lux = 69836.11
+light_temperature = 4603.0
+light_energy = 2.773
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1000718009]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1185115530]
 environment = SubResource("Environment_5ght3")
 camera_attributes = SubResource("CameraAttributesPractical_e5x1b")
 
@@ -168,4 +169,4 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="player" parent="." unique_id=489851307 instance=ExtResource("11_m3bgh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.6009, 71.81169, 53.933346)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.62389, 111.90202, 3.234146)
