@@ -52,25 +52,25 @@ func update_rotation(rotation_input) -> void:
 	global_transform.basis = Basis.from_euler(rotation_input)
 
 
-func sprint() -> void:
-	sprint_modifier = sprint_speed
+# func sprint() -> void:
+# 	sprint_modifier = sprint_speed
 	
 	
 func walk() -> void:
 	sprint_modifier = 0.0
 
 
-func stand() -> void:
-	crouch_modifier = 0.0
-	standing_collision.disabled = false
+# func stand() -> void:
+# 	crouch_modifier = 0.0
+# 	standing_collision.disabled = false
 
 	
 	
-func crouch() -> void:
-	crouch_modifier = crouch_speed
-	standing_collision.disabled = true
+# func crouch() -> void:
+# 	crouch_modifier = crouch_speed
+# 	standing_collision.disabled = true
 
 
 
-func jump() -> void:
-	velocity.y += jump_velocity
+# func jump() -> void:
+# 	velocity.y += jump_velocity

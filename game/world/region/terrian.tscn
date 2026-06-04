@@ -23,6 +23,7 @@ sky_material = SubResource("PanoramaSkyMaterial_5ght3")
 background_mode = 2
 sky = SubResource("Sky_jfmj3")
 tonemap_mode = 3
+sdfgi_use_occlusion = true
 fog_light_color = Color(0.66341424, 0.530506, 0.5850505, 1)
 volumetric_fog_density = 0.02
 volumetric_fog_albedo = Color(0.48570347, 0.48570353, 0.48570347, 1)
