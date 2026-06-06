@@ -111,9 +111,9 @@ var was_on_floor: = false
 
 
 
-func initialize():
+func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	M
+	
 	
 
 	ui.show()

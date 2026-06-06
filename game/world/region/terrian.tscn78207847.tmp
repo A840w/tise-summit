@@ -1,0 +1,1305 @@
+[gd_scene format=3 uid="uid://r1niw4vutqt2"]
+
+[ext_resource type="PackedScene" uid="uid://cs8ce5xfopmys" path="res://game/data/prefabs/fern.tscn" id="1_dtrqk"]
+[ext_resource type="Texture2D" uid="uid://c3pn86huqm4ht" path="res://assets/arts/terrian/01/grass_12_chnnelpkd.png" id="1_md0o6"]
+[ext_resource type="Texture2D" uid="uid://bm2fuauvdmiwo" path="res://assets/arts/terrian/01/grass_12_chnnelpkd_Nrm.png" id="2_woysr"]
+[ext_resource type="PackedScene" uid="uid://bfags0ht6sr4a" path="res://game/data/prefabs/pine_1.tscn" id="2_yuhhg"]
+[ext_resource type="Texture2D" uid="uid://xm4acalwqqiw" path="res://assets/arts/terrian/01/grass_11_chnnelpkd.png" id="3_88ae5"]
+[ext_resource type="Texture2D" uid="uid://bopd22h1ewpuw" path="res://assets/arts/terrian/01/grass_11_chnnelpkd_nrm.png" id="4_n1jro"]
+[ext_resource type="Texture2D" uid="uid://cokan3vciah26" path="res://assets/arts/terrian/01/grass_2_chnnelpkd.png" id="5_ci7ac"]
+[ext_resource type="Texture2D" uid="uid://hgjk0m3b0gux" path="res://assets/arts/terrian/01/grass_2_chnnelpkd_nrm.png" id="6_ykhmh"]
+[ext_resource type="Texture2D" uid="uid://dtm87ujlb636w" path="res://assets/arts/terrian/01/dirt_04_chnnelpkd.png" id="7_w3yiw"]
+[ext_resource type="Texture2D" uid="uid://dcupivl2lbuwv" path="res://assets/arts/terrian/01/dirt_04_chnnelpkd_nrm.png" id="8_tuve5"]
+[ext_resource type="Texture2D" uid="uid://caetn3vc8qcrn" path="res://assets/arts/terrian/01/grass_4_chnnelpkd.png" id="9_5eft3"]
+[ext_resource type="Texture2D" uid="uid://cx82cerxue5k" path="res://assets/arts/terrian/01/grass_4_chnnelpkd_nrm.png" id="10_m3bgh"]
+[ext_resource type="PackedScene" uid="uid://c360x350e8oag" path="res://game/actors/player/player.tscn" id="11_m3bgh"]
+[ext_resource type="PackedScene" uid="uid://dw37afh0ehhl1" path="res://game/data/prefabs/mango_tree.tscn" id="14_e5x1b"]
+[ext_resource type="Theme" uid="uid://dmsbh08a5qg7u" path="res://UI/breastmilk.tres" id="14_yuhhg"]
+[ext_resource type="PackedScene" uid="uid://k8jw3vk7y4kh" path="res://game/data/prefabs/pine_2.tscn" id="15_7j8hc"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_m3bgh"]
+mie_color = Color(0.79193276, 0.5271681, 0.35003835, 1)
+
+[sub_resource type="Sky" id="Sky_jfmj3"]
+sky_material = SubResource("PhysicalSkyMaterial_m3bgh")
+
+[sub_resource type="Environment" id="Environment_5ght3"]
+background_mode = 2
+sky = SubResource("Sky_jfmj3")
+tonemap_mode = 3
+fog_enabled = true
+fog_light_color = Color(0.6523004, 0.51144654, 0.49013233, 1)
+fog_light_energy = 1.7
+fog_sun_scatter = 0.09
+fog_density = 0.0149
+fog_aerial_perspective = 0.825
+volumetric_fog_density = 0.0014
+volumetric_fog_detail_spread = 1.319508
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_e5x1b"]
+
+[sub_resource type="Gradient" id="Gradient_7guqr"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3ks1f"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_md0o6"]
+noise = SubResource("FastNoiseLite_3ks1f")
+color_ramp = SubResource("Gradient_7guqr")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_woysr"]
+_shader_parameters = {
+&"bias_distance": null,
+&"blend_sharpness": null,
+&"depth_blur": null,
+&"enable_macro_variation": null,
+&"enable_projection": null,
+&"flat_terrain_normals": null,
+&"macro_variation1": null,
+&"macro_variation2": null,
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": null,
+&"noise1_angle": null,
+&"noise1_offset": null,
+&"noise1_scale": null,
+&"noise2_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_md0o6"),
+&"projection_threshold": null,
+&"world_noise_fragment_normals": null,
+&"world_noise_height": null,
+&"world_noise_lod_distance": null,
+&"world_noise_max_octaves": null,
+&"world_noise_min_octaves": null,
+&"world_noise_offset": null,
+&"world_noise_region_blend": null,
+&"world_noise_scale": null
+}
+world_background = 2
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_n1jro"]
+name = "fern"
+scene_file = ExtResource("1_dtrqk")
+density = 0.5271537
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_7j8hc"]
+name = "pine_2"
+id = 1
+scene_file = ExtResource("15_7j8hc")
+height_offset = -0.84
+density = 0.47
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 430.7
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_dtrqk"]
+name = "pine_1"
+id = 2
+scene_file = ExtResource("2_yuhhg")
+height_offset = -1.85
+density = 0.081907146
+last_lod = 1
+last_shadow_lod = 1
+lod0_range = 0.0
+lod1_range = 308.1
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_88ae5"]
+name = "grass_12"
+albedo_color = Color(0.8992584, 0.8992584, 0.8992584, 1)
+albedo_texture = ExtResource("1_md0o6")
+normal_texture = ExtResource("2_woysr")
+roughness = 1.0
+uv_scale = 0.676
+detiling_rotation = 0.265
+detiling_shift = 0.231
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_ci7ac"]
+name = "grass_11"
+id = 1
+albedo_color = Color(0.8732984, 0.8732984, 0.8732984, 1)
+albedo_texture = ExtResource("3_88ae5")
+normal_texture = ExtResource("4_n1jro")
+normal_depth = 0.172
+ao_strength = 0.475
+roughness = 0.109
+uv_scale = 0.814
+detiling_rotation = 0.08
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_w3yiw"]
+name = "grass_2"
+id = 2
+albedo_texture = ExtResource("5_ci7ac")
+normal_texture = ExtResource("6_ykhmh")
+roughness = 0.21
+uv_scale = 0.696
+detiling_rotation = 0.189
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_5eft3"]
+name = "dirt_04"
+id = 3
+albedo_color = Color(0.75762784, 0.75762784, 0.75762784, 1)
+albedo_texture = ExtResource("7_w3yiw")
+normal_texture = ExtResource("8_tuve5")
+normal_depth = 0.777
+ao_strength = 0.559
+roughness = 0.794
+uv_scale = 0.587
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_jfmj3"]
+name = "grass_4"
+id = 4
+albedo_color = Color(0.9357826, 0.8612302, 0.71437997, 1)
+albedo_texture = ExtResource("9_5eft3")
+normal_texture = ExtResource("10_m3bgh")
+roughness = 0.315
+uv_scale = 1.024
+detiling_rotation = 0.065
+detiling_shift = 0.088
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_ci7ac"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_n1jro"), SubResource("Terrain3DMeshAsset_7j8hc"), SubResource("Terrain3DMeshAsset_dtrqk")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_88ae5"), SubResource("Terrain3DTextureAsset_ci7ac"), SubResource("Terrain3DTextureAsset_w3yiw"), SubResource("Terrain3DTextureAsset_5eft3"), SubResource("Terrain3DTextureAsset_jfmj3")])
+
+[sub_resource type="GDScript" id="GDScript_dtrqk"]
+script/source = "extends Node
+
+## Node for opening a pause menu when detecting a 'ui_cancel' event.
+
+@export var pause_menu_packed : PackedScene
+@export var focused_viewport : Viewport
+
+var pause_menu : Node
+
+func pause() -> void:
+	if pause_menu.visible: return
+	if not focused_viewport:
+		focused_viewport = get_viewport()
+	var _initial_focus_control = focused_viewport.gui_get_focus_owner()
+	pause_menu.show()
+	if pause_menu is CanvasLayer:
+		await pause_menu.visibility_changed
+	else:
+		await pause_menu.hidden
+	if is_inside_tree() and _initial_focus_control:
+		_initial_focus_control.grab_focus()
+
+# If pause menu should take precedence, override _input() instead.
+func _unhandled_input(event : InputEvent) -> void:
+	if event.is_action_pressed(\"ui_cancel\"):
+		pause()
+
+func _ready() -> void:
+	pause_menu = pause_menu_packed.instantiate()
+	pause_menu.hide()
+	get_tree().current_scene.call_deferred(\"add_child\", pause_menu)
+"
+
+[sub_resource type="GDScript" id="GDScript_fnpbj"]
+script/source = "@tool
+class_name WindowContainer
+extends PanelContainer
+
+signal closed
+signal opened
+
+@export var ui_cancel_closes : bool = true
+
+@export_group(\"Content\")
+@export var update_content : bool = false
+@export_multiline var text : String :
+	set(value):
+		text = value
+		if update_content and is_inside_tree():
+			description_label.text = text
+
+@export var close_button_text : String = \"Close\" :
+	set(value):
+		close_button_text = value
+		if update_content and is_inside_tree():
+			close_button.text = close_button_text
+
+@export_subgroup(\"Title\")
+@export var title : String = \"Menu\" :
+	set(value):
+		title = value
+		if update_content and is_inside_tree():
+			title_label.text = title
+
+@export_range(0, 1000, 1) var title_font_size : int = 16 :
+	set(value):
+		title_font_size = value
+		if update_content and is_inside_tree():
+			title_label.set(\"theme_override_font_sizes/font_size\", title_font_size)
+
+@export var title_visible : bool = true :
+	set(value):
+		title_visible = value
+		if update_content and is_inside_tree():
+			title_margin.visible = title_visible
+
+@onready var content_container : Container = %ContentContainer
+@onready var title_label : Label = %TitleLabel
+@onready var title_margin : MarginContainer = %TitleMargin
+@onready var description_label : RichTextLabel = %DescriptionLabel
+@onready var close_button : Button = %CloseButton
+@onready var menu_buttons : BoxContainer = %MenuButtons
+
+func _ready() -> void:
+	update_content = update_content
+	text = text
+	close_button_text = close_button_text
+	title = title
+	title_font_size = title_font_size
+	title_visible = title_visible
+
+func close() -> void:
+	if not visible: return
+	hide()
+	closed.emit()
+
+func _handle_cancel_input() -> void:
+	close()
+
+func _unhandled_input(event : InputEvent) -> void:
+	if visible and event.is_action_released(\"ui_cancel\") and ui_cancel_closes:
+		_handle_cancel_input()
+		get_viewport().set_input_as_handled()
+
+func _on_close_button_pressed() -> void:
+	close()
+
+#func show() -> void:
+	#super.show()
+	#opened.emit()
+
+func _exit_tree():
+	if Engine.is_editor_hint(): return
+	close()
+"
+
+[sub_resource type="GDScript" id="GDScript_ao662"]
+script/source = "extends Control
+## Node that captures UI focus when switching menus.
+##
+## This script assists with capturing UI focus when
+## opening, closing, or switching between menus.
+## When attached to a node, it will check if it was changed to visible
+## and if it should grab focus. If both are true, it will capture focus
+## on the first eligible node in its scene tree.
+
+## Hierarchical depth to search in the scene tree for a focusable control node.
+@export var search_depth : int = 1
+## If true, always capture focus when made visible.
+@export var enabled : bool = false
+## If true, capture focus if nothing currently is in focus.
+@export var null_focus_enabled : bool = true
+## If true, capture focus if there is a joypad detected.
+@export var joypad_enabled : bool = true
+## If true, capture focus if the mouse is hidden.
+@export var mouse_hidden_enabled : bool = true
+
+## Locks focus
+@export var lock : bool = false :
+	set(value):
+		var value_changed : bool = lock != value
+		lock = value
+		if value_changed and not lock:
+			update_focus()
+
+func _focus_first_search(control_node : Control, levels : int = 1) -> bool:
+	if control_node == null or !control_node.is_visible_in_tree():
+		return false
+	if control_node.focus_mode == FOCUS_ALL:
+		control_node.grab_focus()
+		if control_node is ItemList:
+			control_node.select(0)
+		return true
+	if levels < 1:
+		return false
+	var children = control_node.get_children()
+	for child in children:
+		if _focus_first_search(child, levels - 1):
+			return true
+	return false
+
+func focus_first() -> void:
+	_focus_first_search(self, search_depth)
+
+func update_focus() -> void:
+	if lock : return
+	if _is_visible_and_should_capture():
+		focus_first()
+
+func _should_capture_focus() -> bool:
+	return enabled or \\
+	(get_viewport().gui_get_focus_owner() == null and null_focus_enabled) or \\
+	(Input.get_connected_joypads().size() > 0 and joypad_enabled) or \\
+	(Input.mouse_mode not in [Input.MOUSE_MODE_VISIBLE, Input.MOUSE_MODE_CONFINED] and mouse_hidden_enabled)
+
+func _is_visible_and_should_capture() -> bool:
+	return is_visible_in_tree() and _should_capture_focus()
+
+func _on_visibility_changed() -> void:
+	call_deferred(\"update_focus\")
+
+func _ready() -> void:
+	if is_inside_tree():
+		update_focus()
+		connect(\"visibility_changed\", _on_visibility_changed)
+"
+
+[sub_resource type="PackedScene" id="PackedScene_n0oeg"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(1073741836, 1073741835, 85, 84, 2, 0, 0),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("WindowContainer", "PanelContainer", "process_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "size_flags_horizontal", "size_flags_vertical", "script", "ContentContainer", "MarginContainer", "unique_name_in_owner", "layout_mode", "theme_override_constants/margin_left", "theme_override_constants/margin_top", "theme_override_constants/margin_right", "theme_override_constants/margin_bottom", "BoxContainer", "BoxContainer", "layout_mode", "vertical", "TitleMargin", "MarginContainer", "unique_name_in_owner", "layout_mode", "theme_override_constants/margin_left", "theme_override_constants/margin_top", "theme_override_constants/margin_right", "theme_override_constants/margin_bottom", "BoxContainer", "BoxContainer", "layout_mode", "theme_override_constants/separation", "vertical", "TitleLabel", "Label", "unique_name_in_owner", "layout_mode", "theme_override_font_sizes/font_size", "text", "horizontal_alignment", "HSeparator", "HSeparator", "layout_mode", "BodyMargin", "MarginContainer", "unique_name_in_owner", "layout_mode", "size_flags_vertical", "DescriptionLabel", "RichTextLabel", "unique_name_in_owner", "layout_mode", "bbcode_enabled", "fit_content", "horizontal_alignment", "vertical_alignment", "MenuButtonsMargin", "MarginContainer", "layout_mode", "theme_override_constants/margin_top", "MenuButtons", "BoxContainer", "unique_name_in_owner", "custom_minimum_size", "layout_mode", "size_flags_vertical", "theme_override_constants/separation", "alignment", "vertical", "script", "CloseButton", "Button", "unique_name_in_owner", "layout_mode", "text", "_on_close_button_pressed", "pressed"),
+"node_count": 12,
+"node_ids": PackedInt32Array(2116974961, 641942044, 181378129, 1685835029, 91647963, 1128241240, 1241464319, 1009835268, 369403681, 1873987737, 1139131565, 283447605),
+"node_paths": [NodePath("."), NodePath("./ContentContainer"), NodePath("./ContentContainer/BoxContainer"), NodePath("./ContentContainer/BoxContainer/TitleMargin"), NodePath("./ContentContainer/BoxContainer/TitleMargin/BoxContainer"), NodePath("./ContentContainer/BoxContainer/TitleMargin/BoxContainer"), NodePath("./ContentContainer/BoxContainer"), NodePath("./ContentContainer/BoxContainer/BodyMargin"), NodePath("./ContentContainer/BoxContainer"), NodePath("./ContentContainer/BoxContainer/MenuButtonsMargin"), NodePath("./ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons"), NodePath("."), NodePath("ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons/CloseButton")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 15, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 12, 10, 13, 11, 14, 12, 15, 13, 16, 14, 0, 1073741824, 0, 18, 17, -1, 6, 19, 15, 20, 16, 21, 17, 22, 18, 23, 19, 24, 20, 0, 1073741825, 0, 26, 25, -1, 2, 27, 21, 28, 22, 0, 1073741826, 0, 30, 29, -1, 6, 31, 23, 32, 24, 33, 25, 34, 26, 35, 27, 36, 28, 0, 1073741827, 0, 38, 37, -1, 3, 39, 29, 40, 30, 41, 31, 0, 1073741828, 0, 43, 42, -1, 5, 44, 32, 45, 33, 46, 34, 47, 35, 48, 36, 0, 1073741829, 0, 50, 49, -1, 1, 51, 37, 0, 1073741830, 0, 53, 52, -1, 3, 54, 38, 55, 39, 56, 40, 0, 1073741831, 0, 58, 57, -1, 6, 59, 41, 60, 42, 61, 43, 62, 44, 63, 45, 64, 46, 0, 1073741832, 0, 66, 65, -1, 2, 67, 47, 68, 48, 0, 1073741833, 0, 70, 69, -1, 8, 71, 49, 72, 50, 73, 51, 74, 52, 75, 53, 76, 54, 77, 55, 78, 56, 0, 1073741834, 0, 80, 79, -1, 3, 81, 57, 82, 58, 83, 59, 0),
+"variants": [3, 8, 0.5, 0.5, 0.5, 0.5, -80.0, -50.0, 80.0, 50.0, 2, 2, 4, 4, SubResource("GDScript_fnpbj"), true, 2, 16, 16, 16, 16, 2, true, true, 2, -14, -14, -14, 8, 2, 0, true, true, 2, 16, "Menu", 1, 2, true, 2, 3, true, 2, true, true, 1, 1, 2, 8, true, Vector2(128, 0), 2, 3, 16, 1, true, SubResource("GDScript_ao662"), true, 2, "Close"],
+"version": 3
+}
+
+[sub_resource type="GDScript" id="GDScript_0fyln"]
+script/source = "@tool
+class_name OverlaidWindow
+extends WindowContainer
+
+@export var pauses_game : bool = false :
+	set(value):
+		pauses_game = value
+		if pauses_game:
+			process_mode = PROCESS_MODE_ALWAYS
+		else:
+			process_mode = PROCESS_MODE_INHERIT
+@export var makes_mouse_visible : bool = true
+@export var exclusive : bool = true
+@export var exclusive_background_color : Color
+
+var _initial_pause_state : bool = false
+var _initial_mouse_mode : Input.MouseMode
+var _initial_focus_control
+var _initial_node_focus_modes : Dictionary
+var _scene_tree : SceneTree 
+var _exclusive_control_node : ColorRect
+
+func _set_focus_none(node : Node) -> void:
+	for child in node.get_children():
+		if child == self: continue
+		if child is Control:
+			_initial_node_focus_modes[child] = child.focus_mode
+			child.focus_mode = Control.FOCUS_NONE
+		_set_focus_none(child)
+
+func _set_focus_initial() -> void:
+	for node in _initial_node_focus_modes:
+		if is_instance_valid(node) and node is Control:
+			node.focus_mode = _initial_node_focus_modes[node]
+	_initial_node_focus_modes.clear()
+
+func close() -> void:
+	if not visible: return
+	_scene_tree.paused = _initial_pause_state
+	Input.set_mouse_mode(_initial_mouse_mode)
+	_set_focus_initial()
+	if is_instance_valid(_initial_focus_control) and _initial_focus_control.is_inside_tree():
+		_initial_focus_control.grab_focus()
+	if _exclusive_control_node:
+		_exclusive_control_node.queue_free()
+	super.close()
+
+func _overlaid_window_setup():
+	if _scene_tree:
+		_initial_pause_state = _scene_tree.paused
+	_initial_mouse_mode = Input.get_mouse_mode()
+	_initial_focus_control = get_viewport().gui_get_focus_owner()
+	if _initial_focus_control:
+		_initial_focus_control.release_focus()
+	if Engine.is_editor_hint(): return
+	_scene_tree.paused = pauses_game or _initial_pause_state
+	if makes_mouse_visible:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if exclusive:
+		_set_focus_none(get_tree().current_scene)
+		_exclusive_control_node = ColorRect.new()
+		_exclusive_control_node.name = self.name + \"ExclusiveControl\"
+		_exclusive_control_node.color = exclusive_background_color
+		_exclusive_control_node.set_anchors_preset(PRESET_FULL_RECT)
+		add_sibling.call_deferred(_exclusive_control_node)
+		await _exclusive_control_node.draw
+		get_parent().move_child(_exclusive_control_node, get_index())
+
+func _on_visibility_changed() -> void:
+	if is_visible_in_tree():
+		_overlaid_window_setup()
+
+func _enter_tree() -> void:
+	_scene_tree = get_tree()
+	if not visibility_changed.is_connected(_on_visibility_changed):
+		visibility_changed.connect(_on_visibility_changed)
+	_on_visibility_changed()
+"
+
+[sub_resource type="PackedScene" id="PackedScene_bmukr"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("OverlaidWindow", "process_mode", "script", "pauses_game", "makes_mouse_visible", "exclusive", "exclusive_background_color"),
+"node_count": 1,
+"node_ids": PackedInt32Array(1589953425),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 6, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 0),
+"variants": [SubResource("PackedScene_n0oeg"), 0, SubResource("GDScript_0fyln"), false, true, true, Color(0, 0, 0, 0.5)],
+"version": 3
+}
+
+[sub_resource type="GDScript" id="GDScript_dxtsg"]
+script/source = "@tool
+extends OverlaidWindow
+
+@export var options_menu_scene : PackedScene
+## Path to a main menu scene.
+@export_file(\"*.tscn\") var main_menu_scene_path : String
+@export_node_path(&\"ConfirmationOverlaidWindow\") var restart_confirmation_node_path : NodePath
+@export_node_path(&\"ConfirmationOverlaidWindow\") var main_menu_confirmation_node_path : NodePath
+@export_node_path(&\"ConfirmationOverlaidWindow\") var exit_confirmation_node_path : NodePath
+@export var menu_container_node_path : NodePath = ^\"..\"
+
+@onready var restart_confirmation : ConfirmationOverlaidWindow = get_node(restart_confirmation_node_path)
+@onready var main_menu_confirmation : ConfirmationOverlaidWindow = get_node(main_menu_confirmation_node_path)
+@onready var exit_confirmation : ConfirmationOverlaidWindow = get_node(exit_confirmation_node_path)
+@onready var menu_container : Node = get_node(menu_container_node_path)
+@onready var options_button = %OptionsButton
+@onready var main_menu_button = %MainMenuButton
+@onready var exit_button = %ExitButton
+## If Maaack's Scene Loader is installed, then it will be used to change scenes.
+@onready var scene_loader_node = get_tree().root.get_node_or_null(^\"SceneLoader\")
+
+var open_window : Node
+var _ignore_first_cancel : bool = false
+
+func get_main_menu_scene_path() -> String:
+	return main_menu_scene_path
+
+func close_window() -> void:
+	if open_window != null:
+		if open_window.has_method(\"close\"):
+			open_window.close()
+		else:
+			open_window.hide()
+		open_window = null
+
+func _disable_focus() -> void:
+	for child in %MenuButtons.get_children():
+		if child is Control:
+			child.focus_mode = FOCUS_NONE
+
+func _enable_focus() -> void:
+	for child in %MenuButtons.get_children():
+		if child is Control:
+			child.focus_mode = FOCUS_ALL
+
+func _load_scene(scene_path: String) -> void:
+	_scene_tree.paused = false
+	if scene_loader_node:
+		scene_loader_node.load_scene(scene_path)
+	else:
+		get_tree().change_scene_to_file(scene_path)
+
+func _show_window(window : Control) -> void:
+	_disable_focus.call_deferred()
+	window.show()
+	open_window = window
+	await window.hidden
+	open_window = null
+	_enable_focus.call_deferred()
+
+func _load_and_show_menu(scene : PackedScene) -> void:
+	var window_instance : Control = scene.instantiate()
+	window_instance.visible = false
+	menu_container.add_child.call_deferred(window_instance)
+	await _show_window(window_instance)
+	window_instance.queue_free()
+
+func _handle_cancel_input() -> void:
+	if _ignore_first_cancel:
+		_ignore_first_cancel = false
+		return
+	if open_window != null:
+		close_window()
+	else:
+		super._handle_cancel_input()
+
+func show() -> void:
+	super.show()
+	if Input.is_action_pressed(\"ui_cancel\"):
+		_ignore_first_cancel = true
+
+func _refresh_exit_button() -> void:
+	exit_button.visible = !OS.has_feature(\"web\")
+
+func _refresh_options_button() -> void:
+	options_button.visible = options_menu_scene != null
+
+func _refresh_main_menu_button() -> void:
+	main_menu_button.visible = !get_main_menu_scene_path().is_empty()
+
+func _ready() -> void:
+	_refresh_exit_button()
+	_refresh_options_button()
+	_refresh_main_menu_button()
+	restart_confirmation.confirmed.connect(_on_restart_confirmation_confirmed)
+	main_menu_confirmation.confirmed.connect(_on_main_menu_confirmation_confirmed)
+	exit_confirmation.confirmed.connect(_on_exit_confirmation_confirmed)
+
+func _on_restart_button_pressed() -> void:
+	_show_window(restart_confirmation)
+
+func _on_options_button_pressed() -> void:
+	_load_and_show_menu(options_menu_scene)
+
+func _on_main_menu_button_pressed() -> void:
+	_show_window(main_menu_confirmation)
+
+func _on_exit_button_pressed() -> void:
+	_show_window(exit_confirmation)
+
+func _on_restart_confirmation_confirmed() -> void:
+	get_tree().reload_current_scene()
+	close()
+
+func _on_main_menu_confirmation_confirmed():
+	_load_scene(get_main_menu_scene_path())
+
+func _on_exit_confirmation_confirmed():
+	get_tree().quit()
+"
+
+[sub_resource type="GDScript" id="GDScript_ce2ee"]
+script/source = "@tool
+class_name OverlaidWindowContainer
+extends OverlaidWindow
+
+var instance : Node
+@onready var scene_container : Container = %SceneContainer
+
+@export var packed_scene : PackedScene :
+	set(value):
+		packed_scene = value
+		if is_inside_tree():
+			for child in scene_container.get_children():
+				child.queue_free()
+			if packed_scene:
+				instance = packed_scene.instantiate()
+				scene_container.add_child(instance)
+
+func _ready() -> void:
+	packed_scene = packed_scene
+"
+
+[sub_resource type="PackedScene" id="PackedScene_p38ds"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(1009835268)],
+"names": PackedStringArray("OverlaidWindowSceneContainer", "script", "packed_scene", "SceneContainer", "MarginContainer", "unique_name_in_owner", "layout_mode", "size_flags_vertical"),
+"node_count": 2,
+"node_ids": PackedInt32Array(1073506371, 1393674463),
+"node_paths": [NodePath("./ContentContainer/BoxContainer/BodyMargin")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 2, 1, 1, 2, 2, 0, 1073741824, 0, 4, 524291, -1, 3, 5, 3, 6, 4, 7, 5, 0),
+"variants": [SubResource("PackedScene_bmukr"), SubResource("GDScript_ce2ee"), null, true, 2, 3],
+"version": 3
+}
+
+[sub_resource type="GDScript" id="GDScript_u8qmq"]
+script/source = "extends TabContainer
+## Applies UI page up and page down inputs to tab switching.
+
+func _unhandled_input(event : InputEvent) -> void:
+	if not is_visible_in_tree():
+		return
+	if event.is_action_pressed(\"ui_page_down\"):
+		current_tab = (current_tab+1) % get_tab_count()
+	elif event.is_action_pressed(\"ui_page_up\"):
+		if current_tab == 0:
+			current_tab = get_tab_count()-1
+		else:
+			current_tab = current_tab-1
+"
+
+[sub_resource type="GDScript" id="GDScript_hyasa"]
+script/source = "@tool
+class_name OptionControl
+extends Control
+## Generic scene for editing a value of the [PlayerConfig].
+
+signal setting_changed(value)
+
+enum OptionSections{
+	NONE,
+	INPUT,
+	AUDIO,
+	VIDEO,
+	GAME,
+	APPLICATION,
+	CUSTOM,
+}
+
+const OptionSectionNames : Dictionary = {
+	OptionSections.NONE : \"\",
+	OptionSections.INPUT : AppSettings.INPUT_SECTION,
+	OptionSections.AUDIO : AppSettings.AUDIO_SECTION,
+	OptionSections.VIDEO : AppSettings.VIDEO_SECTION,
+	OptionSections.GAME : AppSettings.GAME_SECTION,
+	OptionSections.APPLICATION : AppSettings.APPLICATION_SECTION,
+	OptionSections.CUSTOM : AppSettings.CUSTOM_SECTION,
+}
+
+## Locks config names in case of issues with inherited scenes.
+## Intentionally put first for initialization.
+@export var lock_config_names : bool = false
+## Defines text displayed to the user.
+@export var option_name : String :
+	set(value):
+		var _update_config : bool = option_name.to_pascal_case() == key and not lock_config_names
+		option_name = value
+		if is_inside_tree():
+			%OptionLabel.text = \"%s%s\" % [option_name, label_suffix]
+		if _update_config:
+			key = option_name.to_pascal_case()
+## Defines what section in the config file this option belongs under.
+@export var option_section : OptionSections :
+	set(value):
+		var _update_config : bool = OptionSectionNames[option_section] == section and not lock_config_names
+		option_section = value
+		if _update_config:
+			section = OptionSectionNames[option_section]
+
+@export_group(\"Config Names\")
+## Defines the key for this option variable in the config file.
+@export var key : String
+## Defines the section for this option variable in the config file.
+@export var section : String
+@export_group(\"Format\")
+@export var label_suffix : String = \" :\"
+@export_group(\"Properties\")
+## Defines whether the option is editable, or only visible by the user.
+@export var editable : bool = true : set = set_editable
+## Defines what kind of variable this option stores in the config file.
+@export var property_type : Variant.Type = TYPE_BOOL
+
+## It is advised to use an external editor to set the default value in the scene file.
+## Godot can experience a bug (caching issue?) that may undo changes.
+var default_value
+var _connected_nodes : Array
+
+func _on_setting_changed(value) -> void:
+	if Engine.is_editor_hint(): return
+	PlayerConfig.set_config(section, key, value)
+	setting_changed.emit(value)
+
+func _get_setting(default : Variant = null) -> Variant:
+	return PlayerConfig.get_config(section, key, default)
+
+func _connect_option_inputs(node) -> void:
+	if node in _connected_nodes: return
+	if node is Button:
+		if node is OptionButton:
+			node.item_selected.connect(_on_setting_changed)
+		elif node is ColorPickerButton:
+			node.color_changed.connect(_on_setting_changed)
+		else:
+			node.toggled.connect(_on_setting_changed)
+		_connected_nodes.append(node)
+	if node is Range:
+		node.value_changed.connect(_on_setting_changed)
+		_connected_nodes.append(node)
+	if node is LineEdit or node is TextEdit:
+		node.text_changed.connect(_on_setting_changed)
+		_connected_nodes.append(node)
+
+func set_value(value : Variant) -> void:
+	if value == null:
+		return
+	for node in get_children():
+		if node is Button:
+			if node is OptionButton:
+				node.select(value as int)
+			elif node is ColorPickerButton:
+				node.color = value as Color
+			else:
+				node.button_pressed = value as bool
+		if node is Range:
+			node.value = value as float
+		if node is LineEdit or node is TextEdit:
+			node.text = \"%s\" % value
+
+func set_editable(value : bool = true) -> void:
+	editable = value
+	for node in get_children():
+		if node is Button:
+			node.disabled = !editable
+		if node is Slider or node is SpinBox or node is LineEdit or node is TextEdit:
+			node.editable = editable
+
+func _ready() -> void:
+	lock_config_names = lock_config_names
+	option_section = option_section
+	option_name = option_name
+	property_type = property_type
+	default_value = default_value
+	set_value(_get_setting(default_value))
+	for child in get_children():
+		_connect_option_inputs(child)
+	child_entered_tree.connect(_connect_option_inputs)
+
+func _set(property : StringName, value : Variant) -> bool:
+	if property == \"value\":
+		set_value(value)
+		return true
+	return false
+
+func _get_property_list() -> Array[Dictionary]:
+	return [
+		{ \"name\": \"value\", \"type\": property_type, \"usage\": PROPERTY_USAGE_NONE},
+		{ \"name\": \"default_value\", \"type\": property_type}
+	]
+"
+
+[sub_resource type="PackedScene" id="PackedScene_yoxeo"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array()],
+"names": PackedStringArray("OptionControl", "HBoxContainer", "custom_minimum_size", "offset_right", "offset_bottom", "script", "default_value", "OptionLabel", "Label", "unique_name_in_owner", "layout_mode", "size_flags_horizontal", "text", "vertical_alignment"),
+"node_count": 2,
+"node_ids": PackedInt32Array(182520878, 65623640),
+"node_paths": [NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 5, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 0, 1073741824, 0, 8, 7, -1, 5, 9, 5, 10, 6, 11, 7, 12, 8, 13, 9, 0),
+"variants": [Vector2(0, 40), 400.0, 40.0, SubResource("GDScript_hyasa"), false, true, 2, 3, " :", 1],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_e6p5a"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array()],
+"names": PackedStringArray("OptionControl", "custom_minimum_size", "offset_bottom", "property_type", "default_value", "HSlider", "HSlider", "custom_minimum_size", "layout_mode", "size_flags_vertical", "max_value", "step", "value", "tick_count", "ticks_on_borders"),
+"node_count": 2,
+"node_ids": PackedInt32Array(1273762370, 1977975168),
+"node_paths": [NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 4, 1, 1, 2, 2, 3, 3, 4, 4, 0, 1073741824, 0, 6, 524293, -1, 8, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 12, 10, 13, 11, 14, 12, 0),
+"variants": [SubResource("PackedScene_yoxeo"), Vector2(0, 28), 28.0, 3, 1.0, Vector2(256, 0), 2, 4, 1.0, 0.05, 1.0, 11, true],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_xu2a1"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [NodePath("VBoxContainer/MarginContainer/VBoxContainer/MouseSensitivityControl"), NodePath("VBoxContainer/MarginContainer/VBoxContainer/JoypadSensitivityControl")],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Inputs", "MarginContainer", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "size_flags_horizontal", "size_flags_vertical", "VBoxContainer", "VBoxContainer", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "theme_override_constants/separation", "script", "search_depth", "MarginContainer", "MarginContainer", "layout_mode", "theme_override_constants/margin_top", "theme_override_constants/margin_bottom", "VBoxContainer", "VBoxContainer", "layout_mode", "size_flags_vertical", "theme_override_constants/separation", "alignment", "MouseSensitivityControl", "layout_mode", "option_name", "option_section", "key", "section", "OptionLabel", "text", "HSlider", "min_value", "max_value", "tick_count", "JoypadSensitivityControl", "layout_mode", "option_name", "option_section", "key", "section", "OptionLabel", "text", "HSlider", "min_value", "max_value", "tick_count"),
+"node_count": 10,
+"node_ids": PackedInt32Array(53228699, 1996738069, 83055971, 1944535166, 146965668, 65623640, 1977975168, 742918502, 65623640, 1977975168),
+"node_paths": [NodePath("."), NodePath("./VBoxContainer"), NodePath("./VBoxContainer/MarginContainer"), NodePath("./VBoxContainer/MarginContainer/VBoxContainer"), NodePath("./VBoxContainer/MarginContainer/VBoxContainer/MouseSensitivityControl"), NodePath("./VBoxContainer/MarginContainer/VBoxContainer/MouseSensitivityControl"), NodePath("./VBoxContainer/MarginContainer/VBoxContainer"), NodePath("./VBoxContainer/MarginContainer/VBoxContainer/JoypadSensitivityControl"), NodePath("./VBoxContainer/MarginContainer/VBoxContainer/JoypadSensitivityControl")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 7, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 0, 1073741824, 0, 10, 9, -1, 6, 11, 7, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 0, 1073741825, 0, 18, 17, -1, 3, 19, 13, 20, 14, 21, 15, 0, 1073741826, 0, 23, 22, -1, 4, 24, 16, 25, 17, 26, 18, 27, 19, 0, 1073741827, 0, 2147483647, 28, 20, 5, 29, 21, 30, 22, 31, 23, 32, 24, 33, 25, 0, 1073741828, -1, 2147483647, 262178, -1, 1, 35, 26, 0, 1073741829, -1, 2147483647, 524324, -1, 3, 37, 27, 38, 28, 39, 29, 0, 1073741830, 0, 2147483647, 40, 30, 5, 41, 31, 42, 32, 43, 33, 44, 34, 45, 35, 0, 1073741831, -1, 2147483647, 262190, -1, 1, 47, 36, 0, 1073741832, -1, 2147483647, 524336, -1, 3, 49, 37, 50, 38, 51, 39, 0),
+"variants": [15, 1.0, 1.0, 2, 2, 3, 3, 2, 4, 4, 8, SubResource("GDScript_ao662"), 5, 2, 32, 32, 2, 3, 8, 1, SubResource("PackedScene_e6p5a"), 2, "Mouse Sensitivity", 1, "MouseSensitivity", "InputSettings", "Mouse Sensitivity :", 0.25, 2.0, 8, SubResource("PackedScene_e6p5a"), 2, "Joypad Sensitivity", 1, "JoypadSensitivity", "InputSettings", "Joypad Sensitivity :", 0.25, 2.0, 8],
+"version": 3
+}
+
+[sub_resource type="GDScript" id="GDScript_hqxgw"]
+script/source = "extends Control
+
+## Scene for adjusting the volume of the audio busses.
+@export var audio_control_scene : PackedScene
+## Optional names of audio busses that should be ignored.
+@export var hide_busses : Array[String]
+
+@onready var mute_control = %MuteControl
+
+func _on_bus_changed(bus_value : float, bus_iter : int) -> void:
+	AppSettings.set_bus_volume(bus_iter, bus_value)
+
+func _add_audio_control(bus_name : String, bus_value : float, bus_iter : int) -> void:
+	if audio_control_scene == null or bus_name in hide_busses or bus_name.begins_with(AppSettings.SYSTEM_BUS_NAME_PREFIX):
+		return
+	var audio_control = audio_control_scene.instantiate()
+	%AudioControlContainer.call_deferred(\"add_child\", audio_control)
+	if audio_control is OptionControl:
+		audio_control.option_section = OptionControl.OptionSections.AUDIO
+		audio_control.option_name = bus_name
+		audio_control.value = bus_value
+		audio_control.connect(\"setting_changed\", _on_bus_changed.bind(bus_iter))
+
+func _add_audio_bus_controls() -> void:
+	for bus_iter in AudioServer.bus_count:
+		var bus_name : String = AppSettings.get_audio_bus_name(bus_iter)
+		var linear : float = AppSettings.get_bus_volume(bus_iter)
+		_add_audio_control(bus_name, linear, bus_iter)
+
+func _update_ui() -> void:
+	_add_audio_bus_controls()
+	mute_control.value = AppSettings.is_muted()
+
+func _ready() -> void:
+	_update_ui()
+
+func _on_mute_control_setting_changed(value : bool) -> void:
+	AppSettings.set_mute(value)
+"
+
+[sub_resource type="PackedScene" id="PackedScene_lfu1p"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array()],
+"names": PackedStringArray("OptionControl", "CheckButton", "CheckButton", "layout_mode"),
+"node_count": 2,
+"node_ids": PackedInt32Array(1710271706, 1607688426),
+"node_paths": [NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0, 1073741824, 0, 2, 524289, -1, 1, 3, 1, 0),
+"variants": [SubResource("PackedScene_yoxeo"), 2],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_iwik0"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(1073741828, 1073741827, 34, 33, 2, 0, 0),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Audio", "MarginContainer", "custom_minimum_size", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "theme_override_constants/margin_top", "theme_override_constants/margin_bottom", "script", "audio_control_scene", "VBoxContainer", "VBoxContainer", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "theme_override_constants/separation", "alignment", "script", "search_depth", "AudioControlContainer", "VBoxContainer", "unique_name_in_owner", "layout_mode", "theme_override_constants/separation", "MuteControl", "unique_name_in_owner", "layout_mode", "option_name", "option_section", "key", "section", "_on_mute_control_setting_changed", "setting_changed"),
+"node_count": 4,
+"node_ids": PackedInt32Array(336911648, 514968465, 618324174, 1949902264),
+"node_paths": [NodePath("."), NodePath("./VBoxContainer"), NodePath("./VBoxContainer"), NodePath("."), NodePath("VBoxContainer/MuteControl")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 10, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 0, 1073741824, 0, 13, 12, -1, 7, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 19, 15, 20, 16, 0, 1073741825, 0, 22, 21, -1, 3, 23, 17, 24, 18, 25, 19, 0, 1073741826, 0, 2147483647, 26, 20, 6, 27, 21, 28, 22, 29, 23, 30, 24, 31, 25, 32, 26, 0),
+"variants": [Vector2(305, 0), 15, 1.0, 1.0, 2, 2, 24, 24, SubResource("GDScript_hqxgw"), SubResource("PackedScene_e6p5a"), Vector2(400, 0), 2, 4, 8, 1, SubResource("GDScript_ao662"), 3, true, 2, 8, SubResource("PackedScene_lfu1p"), true, 2, "Mute", 2, "Mute", "AudioSettings"],
+"version": 3
+}
+
+[sub_resource type="GDScript" id="GDScript_2qonj"]
+script/source = "@tool
+class_name ListOptionControl
+extends OptionControl
+
+## Locks Option Titles from auto-updating when editing Option Values.
+## Intentionally put first for initialization.
+@export var lock_titles : bool = false
+## Defines the list of possible values for the variable
+## this option stores in the config file.
+@export var option_values : Array :
+	set(value) :
+		option_values = value
+		_on_option_values_changed()
+
+## Defines the list of options displayed to the user.
+## Length should match with Option Values.
+@export var option_titles : Array[String] :
+	set(value):
+		option_titles = value
+		if is_inside_tree():
+			_set_option_list(option_titles)
+
+var custom_option_values : Array
+
+func _on_option_values_changed() -> void:
+	if option_values.is_empty(): return
+	custom_option_values = option_values.duplicate()
+	var first_value = custom_option_values.front()
+	property_type = typeof(first_value)
+	_set_titles_from_values()
+
+func _on_setting_changed(value : Variant) -> void:
+	if value < custom_option_values.size() and value >= 0:
+		super._on_setting_changed(custom_option_values[value])
+
+func _set_titles_from_values() -> void:
+	if lock_titles: return
+	var mapped_titles : Array[String] = []
+	for option_value in custom_option_values:
+		mapped_titles.append(_value_title_map(option_value))
+	option_titles = mapped_titles
+
+func _value_title_map(value : Variant) -> String:
+	return \"%s\" % value
+
+func _match_value_to_other(value : Variant, other : Variant) -> Variant:
+	# Primarily for when the editor saves floats as ints instead
+	if value is int and other is float:
+		return float(value)
+	if value is float and other is int:
+		return int(round(value))
+	return value
+
+func _refresh_option_values(value : Variant) -> void:
+	if option_values.is_empty(): return
+	if value == null:
+		return
+	custom_option_values = option_values.duplicate()
+	value = _match_value_to_other(value, custom_option_values.front())
+	if value not in custom_option_values and typeof(value) == property_type:
+		custom_option_values.append(value)
+		custom_option_values.sort()
+	_set_titles_from_values()
+	if value not in option_values:
+		disable_option(custom_option_values.find(value))
+
+func set_value(value : Variant) -> void:
+	_refresh_option_values(value)
+	value = custom_option_values.find(value)
+	super.set_value(value)
+
+func _set_option_list(option_titles_list : Array) -> void:
+	%OptionButton.clear()
+	for option_title in option_titles_list:
+		%OptionButton.add_item(option_title)
+
+func disable_option(option_index : int, disabled : bool = true) -> void:
+	%OptionButton.set_item_disabled(option_index, disabled)
+
+func _ready() -> void:
+	lock_titles = lock_titles
+	option_titles = option_titles
+	option_values = option_values
+	super._ready()
+"
+
+[sub_resource type="PackedScene" id="PackedScene_q7ktr"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array()],
+"names": PackedStringArray("OptionControl", "script", "lock_titles", "option_values", "option_titles", "OptionButton", "OptionButton", "unique_name_in_owner", "layout_mode"),
+"node_count": 2,
+"node_ids": PackedInt32Array(611763351, 1849438175),
+"node_paths": [NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 4, 1, 1, 2, 2, 3, 3, 4, 4, 0, 1073741824, 0, 6, 524293, -1, 2, 7, 5, 8, 6, 0),
+"variants": [SubResource("PackedScene_yoxeo"), SubResource("GDScript_2qonj"), false, [], [], true, 2],
+"version": 3
+}
+
+[sub_resource type="GDScript" id="GDScript_r54co"]
+script/source = "@tool
+extends ListOptionControl
+
+func _set_input_device() -> void:
+	var current_setting : Variant = _get_setting(default_value)
+	if current_setting is bool:
+		current_setting = &\"Default\"
+	AudioServer.input_device = _get_setting(default_value)
+
+func _add_microphone_audio_stream() -> void:
+	var instance := AudioStreamPlayer.new()
+	instance.stream = AudioStreamMicrophone.new()
+	instance.autoplay = true
+	add_child.call_deferred(instance)
+	instance.ready.connect(_set_input_device)
+
+func _ready() -> void:
+	if ProjectSettings.get_setting(\"audio/driver/enable_input\", false):
+		show()
+		if AudioServer.input_device.is_empty():
+			_add_microphone_audio_stream()
+		else:
+			_set_input_device()
+		if not Engine.is_editor_hint():
+			option_values = AudioServer.get_input_device_list()
+	else:
+		hide()
+	super._ready()
+
+func _on_setting_changed(value : Variant) -> void:
+	if value >= option_values.size(): return
+	AudioServer.input_device = option_values[value]
+	super._on_setting_changed(value)
+
+func _value_title_map(value : Variant) -> String:
+	if value is String:
+		return value
+	else:
+		return super._value_title_map(value)
+"
+
+[sub_resource type="PackedScene" id="PackedScene_uyk5g"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("AudioInputOptionControl", "visible", "script", "option_name", "option_section", "key", "section", "property_type", "OptionLabel", "text", "OptionButton", "size_flags_horizontal", "text_overrun_behavior", "clip_text"),
+"node_count": 3,
+"node_ids": PackedInt32Array(708693291, 65623640, 1849438175),
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 7, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 0, 1073741824, -1, 2147483647, 262152, -1, 1, 9, 8, 0, 1073741825, -1, 2147483647, 524298, -1, 3, 11, 9, 12, 10, 13, 11, 0),
+"variants": [SubResource("PackedScene_q7ktr"), false, SubResource("GDScript_r54co"), "Input Device", 2, "InputDevice", "AudioSettings", 4, "Input Device :", 3, 1, true],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_12uq5"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(514968465)],
+"names": PackedStringArray("Audio", "AudioInputOptionControl", "layout_mode"),
+"node_count": 2,
+"node_ids": PackedInt32Array(1370732447, 990697409),
+"node_paths": [NodePath("./VBoxContainer")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0, 1073741824, 0, 2147483647, 786433, 1, 1, 2, 2, 0),
+"variants": [SubResource("PackedScene_iwik0"), SubResource("PackedScene_uyk5g"), 2],
+"version": 3
+}
+
+[sub_resource type="GDScript" id="GDScript_xqodx"]
+script/source = "extends Control
+
+func _preselect_resolution(window : Window) -> void:
+	%ResolutionControl.value = window.size
+
+func _update_resolution_options_enabled(window : Window) -> void:
+	if OS.has_feature(\"web\"):
+		%ResolutionControl.editable = false
+		%ResolutionControl.tooltip_text = \"Disabled for web\"
+	elif AppSettings.is_fullscreen(window):
+		%ResolutionControl.editable = false
+		%ResolutionControl.tooltip_text = \"Disabled for fullscreen\"
+	else:
+		%ResolutionControl.editable = true
+		%ResolutionControl.tooltip_text = \"Select a screen size\"
+
+func _update_ui(window : Window) -> void:
+	%FullscreenControl.value = AppSettings.is_fullscreen(window)
+	_preselect_resolution(window)
+	%VSyncControl.value = AppSettings.get_vsync(window)
+	_update_resolution_options_enabled(window)
+
+func _ready() -> void:
+	var window : Window = get_window()
+	_update_ui(window)
+	window.connect(\"size_changed\", _preselect_resolution.bind(window))
+
+func _on_fullscreen_control_setting_changed(value) -> void:
+	var window : Window = get_window()
+	AppSettings.set_fullscreen_enabled(value, window)
+	_update_resolution_options_enabled(window)
+
+func _on_resolution_control_setting_changed(value) -> void:
+	AppSettings.set_resolution(value, get_window(), false)
+
+func _on_v_sync_control_setting_changed(value) -> void:
+	AppSettings.set_vsync(value, get_window())
+"
+
+[sub_resource type="GDScript" id="GDScript_kt77m"]
+script/source = "@tool
+class_name Vector2ListOptionControl
+extends ListOptionControl
+
+func _value_title_map(value : Variant) -> String:
+	if value is Vector2 or value is Vector2i:
+		return \"%d x %d\" % [value.x , value.y]
+	else:
+		return super._value_title_map(value)
+"
+
+[sub_resource type="PackedScene" id="PackedScene_iq2el"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("OptionControl", "script"),
+"node_count": 1,
+"node_ids": PackedInt32Array(352338800),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 1, 1, 1, 0),
+"variants": [SubResource("PackedScene_q7ktr"), SubResource("GDScript_kt77m")],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_s34py"]
+_bundled = {
+"conn_count": 3,
+"conns": PackedInt32Array(1073741829, 1073741828, 47, 46, 2, 0, 0, 1073741831, 1073741830, 49, 48, 2, 0, 0, 1073741833, 1073741832, 51, 50, 2, 0, 0),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Video", "MarginContainer", "anchors_preset", "anchor_right", "anchor_bottom", "theme_override_constants/margin_top", "theme_override_constants/margin_bottom", "script", "VBoxContainer", "VBoxContainer", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "alignment", "script", "search_depth", "FullscreenControl", "unique_name_in_owner", "layout_mode", "option_name", "option_section", "key", "section", "ResolutionControl", "unique_name_in_owner", "layout_mode", "tooltip_text", "option_values", "option_titles", "option_name", "option_section", "key", "section", "property_type", "VSyncControl", "unique_name_in_owner", "layout_mode", "lock_titles", "option_values", "option_titles", "option_name", "option_section", "key", "section", "property_type", "default_value", "_on_fullscreen_control_setting_changed", "setting_changed", "_on_resolution_control_setting_changed", "setting_changed", "_on_v_sync_control_setting_changed", "setting_changed"),
+"node_count": 5,
+"node_ids": PackedInt32Array(1872290691, 336266026, 1245840093, 1564905111, 1413681045),
+"node_paths": [NodePath("."), NodePath("./VBoxContainer"), NodePath("./VBoxContainer"), NodePath("./VBoxContainer"), NodePath("."), NodePath("VBoxContainer/FullscreenControl"), NodePath("."), NodePath("VBoxContainer/ResolutionControl"), NodePath("."), NodePath("VBoxContainer/VSyncControl")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 6, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 0, 1073741824, 0, 9, 8, -1, 6, 10, 6, 11, 7, 12, 8, 13, 9, 14, 10, 15, 11, 0, 1073741825, 0, 2147483647, 16, 12, 6, 17, 13, 18, 14, 19, 15, 20, 16, 21, 17, 22, 18, 0, 1073741826, 0, 2147483647, 23, 19, 10, 24, 20, 25, 21, 26, 22, 27, 23, 28, 24, 29, 25, 30, 26, 31, 27, 32, 28, 33, 29, 0, 1073741827, 0, 2147483647, 34, 30, 11, 35, 31, 36, 32, 37, 33, 38, 34, 39, 35, 40, 36, 41, 37, 42, 38, 43, 39, 44, 40, 45, 41, 0),
+"variants": [15, 1.0, 1.0, 24, 24, SubResource("GDScript_xqodx"), Vector2(400, 0), 2, 4, 1, SubResource("GDScript_ao662"), 2, SubResource("PackedScene_lfu1p"), true, 2, "Fullscreen", 3, "Fullscreen", "VideoSettings", SubResource("PackedScene_iq2el"), true, 2, "Select a screen size", [Vector2i(640, 360), Vector2i(960, 540), Vector2i(1024, 576), Vector2i(1280, 720), Vector2i(1600, 900), Vector2i(1920, 1080), Vector2i(2048, 1152), Vector2i(2560, 1440), Vector2i(3200, 1800), Vector2i(3840, 2160)], Array[String](["640 x 360", "960 x 540", "1024 x 576", "1280 x 720", "1600 x 900", "1920 x 1080", "2048 x 1152", "2560 x 1440", "3200 x 1800", "3840 x 2160"]), "Resolution", 3, "ScreenResolution", "VideoSettings", 6, SubResource("PackedScene_q7ktr"), true, 2, true, [0, 1, 2, 3], Array[String](["Disabled", "Enabled", "Adaptive", "Mailbox"]), "V-Sync", 3, "V-Sync", "VideoSettings", 2, 0],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_1f1k7"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(336266026), PackedInt32Array(336266026)],
+"names": PackedStringArray("Video", "theme", "AntiAliasingControl", "layout_mode", "lock_titles", "option_values", "option_titles", "option_name", "option_section", "key", "section", "property_type", "default_value", "CameraShakeControl", "visible", "layout_mode", "lock_titles", "option_values", "option_titles", "option_name", "option_section", "key", "section", "property_type", "default_value"),
+"node_count": 3,
+"node_ids": PackedInt32Array(1019312168, 1803366676, 1262504082),
+"node_paths": [NodePath("./VBoxContainer"), NodePath("./VBoxContainer")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 1, 1, 1, 0, 1073741824, 0, 2147483647, 1048578, 2, 10, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 0, 1073741825, 0, 2147483647, 1310733, 13, 11, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 0),
+"variants": [SubResource("PackedScene_s34py"), ExtResource("14_yuhhg"), SubResource("PackedScene_q7ktr"), 2, true, [0, 1, 2, 3], Array[String](["Disabled (Fastest)", "2x", "4x", "8x (Slowest)"]), "Anti-Aliasing", 3, "Anti-aliasing", "VideoSettings", 2, 0, SubResource("PackedScene_q7ktr"), false, 2, true, [1.0, 0.75, 0.5, 0.0], Array[String](["Normal", "Reduced", "Minimal", "None"]), "Camera Shake", 3, "CameraShake", "VideoSettings", 3, 1.0],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_o7k8i"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("MasterOptionsMenu", "TabContainer", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "theme", "tab_alignment", "current_tab", "script", "Inputs", "layout_mode", "metadata/_tab_index", "Audio", "visible", "layout_mode", "metadata/_tab_index", "Video", "visible", "layout_mode", "metadata/_tab_index"),
+"node_count": 4,
+"node_ids": PackedInt32Array(1117884934, 1292920546, 1810546106, 1205827585),
+"node_paths": [NodePath("."), NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 9, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 0, 1073741824, 0, 2147483647, 11, 9, 2, 12, 10, 13, 11, 0, 1073741825, 0, 2147483647, 14, 12, 3, 15, 13, 16, 14, 17, 15, 0, 1073741826, 0, 2147483647, 18, 16, 3, 19, 17, 20, 18, 21, 19, 0),
+"variants": [15, 1.0, 1.0, 2, 2, ExtResource("14_yuhhg"), 1, 0, SubResource("GDScript_u8qmq"), SubResource("PackedScene_xu2a1"), 2, 0, SubResource("PackedScene_12uq5"), false, 2, 1, SubResource("PackedScene_1f1k7"), false, 2, 2],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_ge0s7"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(181378129), PackedInt32Array(91647963), PackedInt32Array(1139131565)],
+"names": PackedStringArray("PauseMenuOptionsOverlaidWindow", "process_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "packed_scene", "title_visible", "TitleMargin", "visible", "TitleLabel", "text", "CloseButton", "size_flags_horizontal", "text"),
+"node_count": 4,
+"node_ids": PackedInt32Array(1827999151, 1685835029, 1128241240, 283447605),
+"node_paths": [NodePath("./ContentContainer/BoxContainer"), NodePath("./ContentContainer/BoxContainer/TitleMargin/BoxContainer"), NodePath("./ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 12, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 0, 1073741824, -1, 2147483647, 262157, -1, 1, 14, 13, 0, 1073741825, -1, 2147483647, 262159, -1, 1, 16, 14, 0, 1073741826, -1, 2147483647, 262161, -1, 2, 18, 15, 19, 16, 0),
+"variants": [SubResource("PackedScene_p38ds"), 3, 15, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, SubResource("PackedScene_o7k8i"), false, false, "Options", 0, "Back"],
+"version": 3
+}
+
+[sub_resource type="GDScript" id="GDScript_fugsx"]
+script/source = "@tool
+class_name ConfirmationOverlaidWindow
+extends OverlaidWindow
+
+signal confirmed
+
+@onready var confirm_button : Button = %ConfirmButton
+
+@export var confirm_button_text : String = \"Confirm\" :
+	set(value):
+		confirm_button_text = value
+		if update_content and is_inside_tree():
+			confirm_button.text = confirm_button_text
+
+func confirm():
+	confirmed.emit()
+	close()
+
+func _on_confirm_button_pressed():
+	confirm()
+"
+
+[sub_resource type="PackedScene" id="PackedScene_dt87f"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 1,
+"conns": PackedInt32Array(1073741828, 1073741827, 15, 14, 2, 0, 0),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(1873987737), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("ConfirmationOverlaidWindow", "script", "confirm_button_text", "update_content", "close_button_text", "MenuButtons", "vertical", "CloseButton", "text", "ConfirmButton", "Button", "unique_name_in_owner", "layout_mode", "text", "_on_confirm_button_pressed", "pressed"),
+"node_count": 4,
+"node_ids": PackedInt32Array(1808979350, 1139131565, 283447605, 1683395510),
+"node_paths": [NodePath("./ContentContainer/BoxContainer/MenuButtonsMargin"), NodePath("./ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons"), NodePath("./ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons"), NodePath("."), NodePath("ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons/ConfirmButton")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 4, 1, 1, 2, 2, 3, 3, 4, 4, 0, 1073741824, -1, 2147483647, 262149, -1, 1, 6, 5, 0, 1073741825, -1, 2147483647, 262151, -1, 1, 8, 6, 0, 1073741826, 0, 10, 524297, -1, 3, 11, 7, 12, 8, 13, 9, 0),
+"variants": [SubResource("PackedScene_bmukr"), SubResource("GDScript_fugsx"), "Confirm", true, "Cancel", false, "Cancel", true, 2, "Confirm"],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_72wxk"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 4,
+"conns": PackedInt32Array(5, 0, 42, 41, 2, 0, 0, 6, 0, 42, 43, 2, 0, 0, 7, 0, 42, 44, 2, 0, 0, 8, 0, 42, 45, 2, 0, 0),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(91647963), PackedInt32Array(181378129), PackedInt32Array(1139131565)],
+"names": PackedStringArray("PauseMenu", "process_mode", "custom_minimum_size", "offset_left", "offset_top", "offset_right", "offset_bottom", "size_flags_horizontal", "size_flags_vertical", "theme", "script", "options_menu_scene", "main_menu_scene_path", "restart_confirmation_node_path", "main_menu_confirmation_node_path", "exit_confirmation_node_path", "menu_container_node_path", "pauses_game", "ContentContainer", "BoxContainer", "TitleMargin", "TitleLabel", "text", "HSeparator", "BodyMargin", "visible", "DescriptionLabel", "MenuButtonsMargin", "MenuButtons", "CloseButton", "RestartButton", "layout_mode", "Button", "OptionsButton", "unique_name_in_owner", "MainMenuButton", "ExitButton", "RestartConfirmation", "title", "MainMenuConfirmation", "ExitConfirmation", "_on_restart_button_pressed", "pressed", "_on_options_button_pressed", "_on_main_menu_button_pressed", "_on_exit_button_pressed"),
+"node_count": 12,
+"node_ids": PackedInt32Array(1280067654, 1128241240, 1009835268, 1873987737, 283447605, 1018831546, 474603015, 1963801793, 605156030, 1290452986, 309973761, 1492274806),
+"node_paths": [NodePath("ContentContainer/BoxContainer/TitleMargin/BoxContainer"), NodePath("ContentContainer/BoxContainer"), NodePath("ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons")],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 17, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 7, 9, 8, 10, 9, 11, 10, 12, 11, 13, 12, 14, 13, 15, 14, 16, 15, 17, 16, 0, 1073741824, 0, 2147483647, 262165, -1, 1, 22, 17, 0, 1073741825, 0, 2147483647, 524312, -1, 1, 25, 18, 0, 1073741825, 0, 2147483647, 786459, -1, 1, 8, 1, 0, 1073741826, 0, 2147483647, 262173, -1, 1, 22, 19, 0, 1073741826, 0, 32, 524318, -1, 2, 31, 20, 22, 21, 0, 1073741826, 0, 32, 786465, -1, 3, 34, 16, 31, 20, 22, 22, 0, 1073741826, 0, 32, 1048611, -1, 3, 34, 16, 31, 20, 22, 23, 0, 1073741826, 0, 32, 1310756, -1, 3, 34, 16, 31, 20, 22, 24, 0, 0, 0, 2147483647, 524325, 25, 5, 34, 16, 25, 18, 31, 20, 22, 26, 38, 27, 0, 0, 0, 2147483647, 786471, 25, 6, 34, 16, 25, 18, 2, 28, 31, 20, 22, 29, 38, 30, 0, 0, 0, 2147483647, 1048616, 25, 5, 34, 16, 25, 18, 31, 20, 22, 31, 38, 30, 0),
+"variants": [SubResource("PackedScene_bmukr"), 3, Vector2(256, 312), -128.0, -155.0, 128.0, 157.0, 1, ExtResource("14_yuhhg"), SubResource("GDScript_dxtsg"), SubResource("PackedScene_ge0s7"), "res://addons/maaacks_game_template/examples/scenes/menus/main_menu/main_menu_with_animations.tscn", NodePath("RestartConfirmation"), NodePath("MainMenuConfirmation"), NodePath("ExitConfirmation"), NodePath(".."), true, "Paused", false, "Resume", 2, "Restart", "Options", "Main Menu", "Exit Game", SubResource("PackedScene_dt87f"), "Restart the game?", "Confirm Restart", Vector2(220, 0), "Exit to the main menu?", "Confirm Exit", "Exit the game?"],
+"version": 3
+}
+
+[node name="terrian" type="Node3D" unique_id=531803863]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1528475928]
+transform = Transform3D(-0.8660255, -0.19536558, 0.46025252, -0.17142013, 0.98072803, 0.09374478, -0.46969685, 0.0022888556, -0.8828247, 0, 0, 4.501995)
+light_intensity_lux = 69836.11
+light_temperature = 4603.0
+light_energy = 2.773
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1185115530]
+environment = SubResource("Environment_5ght3")
+camera_attributes = SubResource("CameraAttributesPractical_e5x1b")
+
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=1571990748]
+data_directory = "res://game/world/terrian/data/01"
+material = SubResource("Terrain3DMaterial_woysr")
+assets = SubResource("Terrain3DAssets_ci7ac")
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="." unique_id=1017538042]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseMenuController" type="Node" parent="Control" unique_id=930772944]
+script = SubResource("GDScript_dtrqk")
+pause_menu_packed = SubResource("PackedScene_72wxk")
+
+[node name="mango_tree_L" parent="." unique_id=1054842822 instance=ExtResource("14_e5x1b")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 31.631561, 3.4467254, -1.9369583)
+
+[node name="player" parent="." unique_id=489851307 instance=ExtResource("11_m3bgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.88192, 13.96899, 0)
