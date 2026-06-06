@@ -81,7 +81,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_10673")
 
-[node name="mango" type="Node3D" unique_id=389032353]
+[sub_resource type="SphereShape3D" id="SphereShape3D_bafsp"]
+
+[node name="mango" type="StaticBody3D" unique_id=409418074]
 
 [node name="mango" type="MeshInstance3D" parent="." unique_id=996152703]
 mesh = SubResource("ArrayMesh_qef7y")
@@ -89,3 +91,6 @@ mesh = SubResource("ArrayMesh_qef7y")
 [node name="stem" type="MeshInstance3D" parent="." unique_id=2039319420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024122395, 1.0514224, 0)
 mesh = SubResource("ArrayMesh_v2110")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1056473151]
+shape = SubResource("SphereShape3D_bafsp")
