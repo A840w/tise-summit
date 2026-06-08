@@ -45,5 +45,3 @@ signal is_censor_in_view(is_in_view: bool, large: bool)
 @warning_ignore("unused_signal")
 signal set_censor_position(screen_pos: Vector2)
 
-@warning_ignore("unused_signal")
-signal near_bottom
