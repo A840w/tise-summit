@@ -1,6 +1,23 @@
 extends CharacterBody3D
 
 
+@export_category("node refrences")
+@export var camera_pivot : Node3D
+@export var camera : Camera3D
+@export var ground_cast : RayCast3D
+@export_group("Hands")
+@export var arm_pivot : Node3D
+@export_subgroup("Left Hand")
+@export var left_arm : SpringArm3D
+@export var left_hand : Sprite3D
+@export var left_hand_collison : CollisionShape3D
+@export_subgroup("Right Hand")
+@export var right_arm : SpringArm3D
+@export var right_hand : Sprite3D
+@export var right_hand_collison : CollisionShape3D
+
+
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
