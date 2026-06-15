@@ -261,7 +261,7 @@ func _physics_process(delta: float) -> void :
 
 
 	if is_on_floor() and death_fall and not did_die:
-		death()
+		# death()
 		print("Player has died from falling.")
 
 

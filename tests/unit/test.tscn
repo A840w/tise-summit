@@ -1,23 +1,25 @@
 [gd_scene format=3 uid="uid://duuc0c7ifkybu"]
 
+[ext_resource type="CompositorEffect" uid="uid://v0kty216hlxo" path="res://NewCloudsGD.tres" id="1_2kbhw"]
 [ext_resource type="PackedScene" uid="uid://c360x350e8oag" path="res://game/actors/player/player.tscn" id="1_bk8ha"]
+[ext_resource type="Script" uid="uid://djusduuxf0voj" path="res://addons/SunshineClouds2/SunshineCloudsDriver.gd" id="3_yvttg"]
+[ext_resource type="Script" uid="uid://bxlm4e5qfb7uu" path="res://addons/SunshineClouds2/SunshineCloudEffector.gd" id="4_0t1vg"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bk8ha"]
-sky_top_color = Color(0.34044093, 0.43082625, 0.7206116, 1)
-sky_horizon_color = Color(0.53170216, 0.5497463, 0.61706936, 1)
-ground_bottom_color = Color(0.09172753, 0.07351848, 0.053025566, 1)
-ground_horizon_color = Color(0.53170216, 0.5497463, 0.61706936, 1)
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_lebqt"]
+rayleigh_color = Color(0.47644144, 0.5821229, 0.78163636, 1)
 
 [sub_resource type="Sky" id="Sky_2mkum"]
-sky_material = SubResource("ProceduralSkyMaterial_bk8ha")
+sky_material = SubResource("PhysicalSkyMaterial_lebqt")
 
 [sub_resource type="Environment" id="Environment_2tl6e"]
 background_mode = 2
 sky = SubResource("Sky_2mkum")
 tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2kbhw"]
+
+[sub_resource type="Compositor" id="Compositor_2mf0b"]
+compositor_effects = Array[CompositorEffect]([ExtResource("1_2kbhw")])
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhudx"]
 albedo_color = Color(0.4392157, 1, 0.3647059, 1)
@@ -51,11 +53,13 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=104596879]
 environment = SubResource("Environment_2tl6e")
 camera_attributes = SubResource("CameraAttributesPractical_2kbhw")
+compositor = SubResource("Compositor_2mf0b")
 
 [node name="ground" type="CSGBox3D" parent="." unique_id=1533261999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.08374, 0)
 material_override = SubResource("StandardMaterial3D_lhudx")
 use_collision = true
-size = Vector3(50, 1, 50)
+size = Vector3(50, 9.16748, 50)
 
 [node name="trunk" type="MeshInstance3D" parent="." unique_id=1731884834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5369215, 0)
@@ -152,4 +156,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.008374214, 0)
 shape = SubResource("CapsuleShape3D_lhudx")
 
 [node name="player" parent="." unique_id=489851307 instance=ExtResource("1_bk8ha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15998173, 3.2568035, 4.6100106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15998173, 1.3291893, 4.6100106)
+
+[node name="SunshineCloudsDriverGD" type="Node" parent="." unique_id=1218604958 node_paths=PackedStringArray("tracked_directional_lights")]
+script = ExtResource("3_yvttg")
+update_continuously = true
+clouds_resource = ExtResource("1_2kbhw")
+ambience_sample_environment = SubResource("Environment_2tl6e")
+tracked_directional_lights = [NodePath("../DirectionalLight3D")]
+tracked_directional_light_shadow_steps = Array[int]([12])
+metadata/_custom_type_script = "uid://djusduuxf0voj"
+
+[node name="SunshineCloudsEffector" type="Node3D" parent="." unique_id=853065730]
+script = ExtResource("4_0t1vg")
+metadata/_custom_type_script = "uid://bxlm4e5qfb7uu"
