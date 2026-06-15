@@ -2,9 +2,7 @@
 .godot/
 /android/
 .gitignore
-.gitattributes
-.import/
-.import
+.gitattribute
 .import/
 *.import
 /demo
