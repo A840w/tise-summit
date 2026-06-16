@@ -20,9 +20,15 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://conh7gi682dj3"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=4
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
+enabled=PackedStringArray("res://addons/SunshineClouds2/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [file_customization]
 

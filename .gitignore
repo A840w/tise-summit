@@ -2,7 +2,8 @@
 .godot/
 /android/
 .gitignore
-.gitattributes
+.gitattribute
+
 /demo
 /export_window
 /html_exports

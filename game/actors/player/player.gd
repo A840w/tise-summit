@@ -263,10 +263,9 @@ func _physics_process(delta: float) -> void :
 
 
 	if is_on_floor() and death_fall and not did_die:
-<<<<<<< Updated upstream
+
 		death()
-=======
->>>>>>> Stashed changes
+
 		print("Player has died from falling.")
 		death("fell from height")
 
