@@ -1,32 +1,59 @@
 [gd_scene format=3 uid="uid://duuc0c7ifkybu"]
 
 [ext_resource type="PackedScene" uid="uid://c360x350e8oag" path="res://game/actors/player/player.tscn" id="1_bk8ha"]
+<<<<<<< Updated upstream
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bk8ha"]
+=======
+[ext_resource type="Texture2D" uid="uid://2xcba3xxap8t" path="res://assets/textures/PNG/Dark/texture_08.png" id="2_yvttg"]
+[ext_resource type="Texture2D" uid="uid://blnsoauylrbte" path="res://assets/textures/PNG/Light/texture_02.png" id="3_2tl6e"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2mkum"]
+>>>>>>> Stashed changes
 sky_top_color = Color(0.34044093, 0.43082625, 0.7206116, 1)
 sky_horizon_color = Color(0.53170216, 0.5497463, 0.61706936, 1)
 ground_bottom_color = Color(0.09172753, 0.07351848, 0.053025566, 1)
 ground_horizon_color = Color(0.53170216, 0.5497463, 0.61706936, 1)
 
+<<<<<<< Updated upstream
 [sub_resource type="Sky" id="Sky_2mkum"]
 sky_material = SubResource("ProceduralSkyMaterial_bk8ha")
+=======
+[sub_resource type="Sky" id="Sky_2tl6e"]
+sky_material = SubResource("ProceduralSkyMaterial_2mkum")
+>>>>>>> Stashed changes
 
-[sub_resource type="Environment" id="Environment_2tl6e"]
+[sub_resource type="Environment" id="Environment_2kbhw"]
 background_mode = 2
-sky = SubResource("Sky_2mkum")
+sky = SubResource("Sky_2tl6e")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2kbhw"]
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_yvttg"]
 
+<<<<<<< Updated upstream
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhudx"]
 albedo_color = Color(0.4392157, 1, 0.3647059, 1)
+=======
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0t1vg"]
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.9341946, 0.9341946, 0.9341946, 1)
+albedo_texture = ExtResource("2_yvttg")
+metallic = 0.53
+metallic_specular = 0.23
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
+>>>>>>> Stashed changes
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lhudx"]
 height = 26.972
 
 [sub_resource type="BoxMesh" id="BoxMesh_lhudx"]
 size = Vector3(0.155, 0.07, 2.37)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2mkum"]
+size = Vector3(0.15292358, 0.112213135, 0.18774414)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhudx"]
 size = Vector3(2.2583008, 0.0847168, 0.140625)
@@ -42,12 +69,42 @@ height = 0.5
 radius = 0.2265625
 height = 0.4868164
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8lcvq"]
+size = Vector3(5.8458557, 25.809952, 8.23053)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mf0b"]
+albedo_texture = ExtResource("3_2tl6e")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_i3te8"]
+size = Vector3(5.875122, 25.79395, 8.097595)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mkum"]
+albedo_color = Color(0.48847073, 0.69798577, 0.6990565, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1y21l"]
+size = Vector3(0.20771484, 0.1, 0.17702636)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tl6e"]
+albedo_color = Color(0.89666593, 0.5104268, 0.68852985, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kbhw"]
+albedo_color = Color(0.6567066, 0.6881131, 0.21083063, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvttg"]
+albedo_color = Color(0.48051763, 0.7291747, 0.4231923, 1)
+
 [node name="test" type="Node3D" unique_id=1103720266]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1459558913]
+environment = SubResource("Environment_2kbhw")
+camera_attributes = SubResource("CameraAttributesPractical_yvttg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=582611976]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
+<<<<<<< Updated upstream
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=104596879]
 environment = SubResource("Environment_2tl6e")
 camera_attributes = SubResource("CameraAttributesPractical_2kbhw")
@@ -56,6 +113,13 @@ camera_attributes = SubResource("CameraAttributesPractical_2kbhw")
 material_override = SubResource("StandardMaterial3D_lhudx")
 use_collision = true
 size = Vector3(50, 1, 50)
+=======
+[node name="ground" type="CSGBox3D" parent="." unique_id=1533261999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.08374, -17.561401)
+material_override = SubResource("StandardMaterial3D_0t1vg")
+use_collision = true
+size = Vector3(100, 4, 100)
+>>>>>>> Stashed changes
 
 [node name="trunk" type="MeshInstance3D" parent="." unique_id=1731884834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5369215, 0)
@@ -74,6 +138,550 @@ transform = Transform3D(-0.46944073, 0, 0.88296413, 0, 1, 0, -0.88296413, 0, -0.
 mesh = SubResource("BoxMesh_lhudx")
 
 [node name="climbable_branch" type="StaticBody3D" parent="." unique_id=899660117 groups=["ClimbableBranch", "climbable_trunk"]]
+
+[node name="climb" type="CollisionShape3D" parent="climbable_branch" unique_id=1279141700 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, -0.839344, 9.525376)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb2" type="CollisionShape3D" parent="climbable_branch" unique_id=1567475112 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, -0.3910049, 10.458077)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb3" type="CollisionShape3D" parent="climbable_branch" unique_id=1493047808 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, -0.3163802, 8.428102)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb4" type="CollisionShape3D" parent="climbable_branch" unique_id=193394360 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 0.13195893, 9.360803)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb5" type="CollisionShape3D" parent="climbable_branch" unique_id=566559804 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 0.8285597, 9.590203)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb6" type="CollisionShape3D" parent="climbable_branch" unique_id=729848038 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 1.2768989, 10.522904)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb7" type="CollisionShape3D" parent="climbable_branch" unique_id=1401337719 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 1.17644, 8.7500105)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb8" type="CollisionShape3D" parent="climbable_branch" unique_id=1081101324 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 1.6247791, 9.682712)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb9" type="CollisionShape3D" parent="climbable_branch" unique_id=1723208437 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, -0.839344, 10.471452)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb10" type="CollisionShape3D" parent="climbable_branch" unique_id=427484769 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, -0.3910049, 11.404153)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb11" type="CollisionShape3D" parent="climbable_branch" unique_id=416610948 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, -0.3163802, 9.374177)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb12" type="CollisionShape3D" parent="climbable_branch" unique_id=218797376 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 0.13195893, 10.306878)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb13" type="CollisionShape3D" parent="climbable_branch" unique_id=2069224371 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 0.8285597, 10.536279)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb14" type="CollisionShape3D" parent="climbable_branch" unique_id=635111350 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 1.2768989, 11.46898)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb15" type="CollisionShape3D" parent="climbable_branch" unique_id=122781135 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 1.17644, 9.696086)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb16" type="CollisionShape3D" parent="climbable_branch" unique_id=95925125 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 1.6247791, 10.628787)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb17" type="CollisionShape3D" parent="climbable_branch" unique_id=1484766634 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 1.7304542, 10.070999)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb18" type="CollisionShape3D" parent="climbable_branch" unique_id=1616944449 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 2.1787934, 11.0037)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb19" type="CollisionShape3D" parent="climbable_branch" unique_id=1737655294 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 2.253418, 8.973724)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb20" type="CollisionShape3D" parent="climbable_branch" unique_id=1774353013 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 2.7017572, 9.906425)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb21" type="CollisionShape3D" parent="climbable_branch" unique_id=1306517731 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 3.3983579, 10.135826)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb22" type="CollisionShape3D" parent="climbable_branch" unique_id=2121678841 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 3.846697, 11.068527)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb23" type="CollisionShape3D" parent="climbable_branch" unique_id=1241702437 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 3.7462382, 9.295633)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb24" type="CollisionShape3D" parent="climbable_branch" unique_id=1647087185 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 4.194577, 10.228334)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb25" type="CollisionShape3D" parent="climbable_branch" unique_id=1758579160 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 1.3965824, 11.489111)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb26" type="CollisionShape3D" parent="climbable_branch" unique_id=557332266 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 1.8449216, 12.421812)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb27" type="CollisionShape3D" parent="climbable_branch" unique_id=1947614283 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 1.9195461, 10.391836)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb28" type="CollisionShape3D" parent="climbable_branch" unique_id=770760195 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 2.3678854, 11.324537)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb29" type="CollisionShape3D" parent="climbable_branch" unique_id=1942519437 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 3.064486, 11.553938)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb30" type="CollisionShape3D" parent="climbable_branch" unique_id=378152115 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 3.5128253, 12.486639)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb31" type="CollisionShape3D" parent="climbable_branch" unique_id=1749548544 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 3.4123664, 10.713745)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb32" type="CollisionShape3D" parent="climbable_branch" unique_id=217375910 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 3.8607054, 11.646446)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb33" type="CollisionShape3D" parent="climbable_branch" unique_id=1991042351 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 3.6938057, 9.815129)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb34" type="CollisionShape3D" parent="climbable_branch" unique_id=1824973205 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 4.142145, 10.74783)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb35" type="CollisionShape3D" parent="climbable_branch" unique_id=1814682090 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 4.2167697, 8.7178545)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb36" type="CollisionShape3D" parent="climbable_branch" unique_id=1066430147 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 4.6651087, 9.650556)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb37" type="CollisionShape3D" parent="climbable_branch" unique_id=635169198 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 5.3617096, 9.879956)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb38" type="CollisionShape3D" parent="climbable_branch" unique_id=1992451732 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 5.810049, 10.812657)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb39" type="CollisionShape3D" parent="climbable_branch" unique_id=15606132 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 5.70959, 9.039763)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb40" type="CollisionShape3D" parent="climbable_branch" unique_id=165792911 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 6.157929, 9.972465)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb41" type="CollisionShape3D" parent="climbable_branch" unique_id=594488358 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 4.510277, 10.998088)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb42" type="CollisionShape3D" parent="climbable_branch" unique_id=1080258567 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 4.9586163, 11.930789)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb43" type="CollisionShape3D" parent="climbable_branch" unique_id=2062250664 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 5.033241, 9.900813)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb44" type="CollisionShape3D" parent="climbable_branch" unique_id=442054843 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 5.48158, 10.833514)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb45" type="CollisionShape3D" parent="climbable_branch" unique_id=267756581 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 6.1781807, 11.062915)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb46" type="CollisionShape3D" parent="climbable_branch" unique_id=987784740 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 6.62652, 11.995616)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb47" type="CollisionShape3D" parent="climbable_branch" unique_id=1714789706 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 6.526061, 10.222722)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb48" type="CollisionShape3D" parent="climbable_branch" unique_id=1185980911 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 6.9744, 11.155423)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb49" type="CollisionShape3D" parent="climbable_branch" unique_id=1820599489 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 5.610658, 9.370819)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb50" type="CollisionShape3D" parent="climbable_branch" unique_id=787200094 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 6.0589976, 10.30352)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb51" type="CollisionShape3D" parent="climbable_branch" unique_id=622387930 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 6.133622, 8.273544)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb52" type="CollisionShape3D" parent="climbable_branch" unique_id=298330428 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 6.581961, 9.206245)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb53" type="CollisionShape3D" parent="climbable_branch" unique_id=737339034 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 7.278562, 9.435646)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb54" type="CollisionShape3D" parent="climbable_branch" unique_id=282319629 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 7.7269015, 10.368347)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb55" type="CollisionShape3D" parent="climbable_branch" unique_id=1190032202 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 7.6264424, 8.595453)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb56" type="CollisionShape3D" parent="climbable_branch" unique_id=1776740533 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 8.074781, 9.528154)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb57" type="CollisionShape3D" parent="climbable_branch" unique_id=492397210 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 7.3744397, 10.160247)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb58" type="CollisionShape3D" parent="climbable_branch" unique_id=1463645600 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 7.822779, 11.092948)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb59" type="CollisionShape3D" parent="climbable_branch" unique_id=34998773 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 7.8974037, 9.062972)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb60" type="CollisionShape3D" parent="climbable_branch" unique_id=488519156 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 8.345743, 9.995673)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb61" type="CollisionShape3D" parent="climbable_branch" unique_id=584071884 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 9.042343, 10.225074)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb62" type="CollisionShape3D" parent="climbable_branch" unique_id=1843294226 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 9.490683, 11.157775)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb63" type="CollisionShape3D" parent="climbable_branch" unique_id=811710783 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 9.390224, 9.384881)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb64" type="CollisionShape3D" parent="climbable_branch" unique_id=1629256086 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 9.838563, 10.317582)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb65" type="CollisionShape3D" parent="climbable_branch" unique_id=916882829 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 8.279301, 9.178097)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb66" type="CollisionShape3D" parent="climbable_branch" unique_id=1794293928 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 8.72764, 10.110798)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb67" type="CollisionShape3D" parent="climbable_branch" unique_id=1447422752 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 8.802265, 8.080822)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb68" type="CollisionShape3D" parent="climbable_branch" unique_id=960006044 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 9.250605, 9.013523)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb69" type="CollisionShape3D" parent="climbable_branch" unique_id=2048619816 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 9.947205, 9.242924)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb70" type="CollisionShape3D" parent="climbable_branch" unique_id=323823576 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 10.395544, 10.175625)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb71" type="CollisionShape3D" parent="climbable_branch" unique_id=1874540756 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 10.295086, 8.402731)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb72" type="CollisionShape3D" parent="climbable_branch" unique_id=457827755 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 10.743424, 9.335432)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb73" type="CollisionShape3D" parent="climbable_branch" unique_id=193930873 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 11.064661, 10.454587)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb74" type="CollisionShape3D" parent="climbable_branch" unique_id=442403918 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 11.5130005, 11.387288)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb75" type="CollisionShape3D" parent="climbable_branch" unique_id=1776895363 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 11.5876255, 9.357312)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb76" type="CollisionShape3D" parent="climbable_branch" unique_id=619917396 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 12.035965, 10.290013)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb77" type="CollisionShape3D" parent="climbable_branch" unique_id=2078248811 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 12.732565, 10.519414)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb78" type="CollisionShape3D" parent="climbable_branch" unique_id=263537838 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 13.180904, 11.452115)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb79" type="CollisionShape3D" parent="climbable_branch" unique_id=1433792328 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 13.080446, 9.679221)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb80" type="CollisionShape3D" parent="climbable_branch" unique_id=114096898 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 13.528785, 10.611922)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb81" type="CollisionShape3D" parent="climbable_branch" unique_id=1718193912 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 10.300678, 9.198906)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb82" type="CollisionShape3D" parent="climbable_branch" unique_id=718438471 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 10.749018, 10.131607)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb83" type="CollisionShape3D" parent="climbable_branch" unique_id=1807583647 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 10.823643, 8.101631)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb84" type="CollisionShape3D" parent="climbable_branch" unique_id=129759500 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 11.271982, 9.034332)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb85" type="CollisionShape3D" parent="climbable_branch" unique_id=1438034060 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 11.968582, 9.263733)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb86" type="CollisionShape3D" parent="climbable_branch" unique_id=859190640 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 12.416922, 10.196434)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb87" type="CollisionShape3D" parent="climbable_branch" unique_id=304023770 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 12.316463, 8.42354)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb88" type="CollisionShape3D" parent="climbable_branch" unique_id=1015051034 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 12.764802, 9.356241)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb89" type="CollisionShape3D" parent="climbable_branch" unique_id=1881583774 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 12.347317, 9.198906)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb90" type="CollisionShape3D" parent="climbable_branch" unique_id=204358286 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 12.795656, 10.131607)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb91" type="CollisionShape3D" parent="climbable_branch" unique_id=2030553602 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 12.870281, 8.101631)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb92" type="CollisionShape3D" parent="climbable_branch" unique_id=1021114683 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 13.318178, 9.036407)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb93" type="CollisionShape3D" parent="climbable_branch" unique_id=627063960 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 14.015221, 9.263733)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb94" type="CollisionShape3D" parent="climbable_branch" unique_id=1664932092 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 14.46356, 10.196434)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb95" type="CollisionShape3D" parent="climbable_branch" unique_id=345340800 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 14.363102, 8.42354)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb96" type="CollisionShape3D" parent="climbable_branch" unique_id=919322379 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 14.81144, 9.356241)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb97" type="CollisionShape3D" parent="climbable_branch" unique_id=1452494110 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 13.302359, 10.973551)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb98" type="CollisionShape3D" parent="climbable_branch" unique_id=1207626072 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 13.750698, 11.906252)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb99" type="CollisionShape3D" parent="climbable_branch" unique_id=1377673538 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 13.825323, 9.876276)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb100" type="CollisionShape3D" parent="climbable_branch" unique_id=311502531 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 14.273663, 10.808977)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb101" type="CollisionShape3D" parent="climbable_branch" unique_id=344379689 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 14.970263, 11.038378)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb102" type="CollisionShape3D" parent="climbable_branch" unique_id=458426193 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 15.418602, 11.971079)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb103" type="CollisionShape3D" parent="climbable_branch" unique_id=15121717 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 15.318144, 10.198185)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb104" type="CollisionShape3D" parent="climbable_branch" unique_id=909884690 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 15.766482, 11.130886)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb105" type="CollisionShape3D" parent="climbable_branch" unique_id=265606628 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 14.459176, 9.278099)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb106" type="CollisionShape3D" parent="climbable_branch" unique_id=1266034089 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 14.907516, 10.2108)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb107" type="CollisionShape3D" parent="climbable_branch" unique_id=1213226307 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 14.982141, 8.180824)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb108" type="CollisionShape3D" parent="climbable_branch" unique_id=1118013443 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 15.43048, 9.113525)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb109" type="CollisionShape3D" parent="climbable_branch" unique_id=942591868 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 16.127079, 9.342926)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb110" type="CollisionShape3D" parent="climbable_branch" unique_id=838147678 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 16.57542, 10.275627)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb111" type="CollisionShape3D" parent="climbable_branch" unique_id=829877893 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 16.47496, 8.502733)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb112" type="CollisionShape3D" parent="climbable_branch" unique_id=1372417866 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 16.9233, 9.435434)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb113" type="CollisionShape3D" parent="climbable_branch" unique_id=1301375892 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 16.083172, 10.222832)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb114" type="CollisionShape3D" parent="climbable_branch" unique_id=583129966 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 16.53151, 11.155533)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb115" type="CollisionShape3D" parent="climbable_branch" unique_id=866419163 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 16.606136, 9.125557)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb116" type="CollisionShape3D" parent="climbable_branch" unique_id=1660278290 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 17.054474, 10.058258)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb117" type="CollisionShape3D" parent="climbable_branch" unique_id=899274493 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 17.751074, 10.287659)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb118" type="CollisionShape3D" parent="climbable_branch" unique_id=87532029 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 18.199415, 11.22036)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb119" type="CollisionShape3D" parent="climbable_branch" unique_id=753723307 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 18.098955, 9.447466)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb120" type="CollisionShape3D" parent="climbable_branch" unique_id=1792009834 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 18.547295, 10.380167)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb121" type="CollisionShape3D" parent="climbable_branch" unique_id=1673387109 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 17.074581, 9.144068)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb122" type="CollisionShape3D" parent="climbable_branch" unique_id=305578394 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 17.522919, 10.076769)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb123" type="CollisionShape3D" parent="climbable_branch" unique_id=1212640928 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 17.597546, 8.046793)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb124" type="CollisionShape3D" parent="climbable_branch" unique_id=531753863 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 18.045883, 8.979494)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb125" type="CollisionShape3D" parent="climbable_branch" unique_id=578533023 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 18.742483, 9.208895)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb126" type="CollisionShape3D" parent="climbable_branch" unique_id=577630451 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 19.190825, 10.141596)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb127" type="CollisionShape3D" parent="climbable_branch" unique_id=1081395193 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 19.090364, 8.368702)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb128" type="CollisionShape3D" parent="climbable_branch" unique_id=1411020167 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 19.538704, 9.301403)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb129" type="CollisionShape3D" parent="climbable_branch" unique_id=591942914 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 19.762278, 10.049437)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb130" type="CollisionShape3D" parent="climbable_branch" unique_id=1946069090 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 20.210615, 10.982138)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb131" type="CollisionShape3D" parent="climbable_branch" unique_id=1537254586 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 20.285242, 8.952162)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb132" type="CollisionShape3D" parent="climbable_branch" unique_id=255574075 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 20.73358, 9.884863)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb133" type="CollisionShape3D" parent="climbable_branch" unique_id=412337205 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 21.43018, 10.114264)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb134" type="CollisionShape3D" parent="climbable_branch" unique_id=1798387741 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 21.878521, 11.046965)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb135" type="CollisionShape3D" parent="climbable_branch" unique_id=802188484 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 21.77806, 9.274071)
+shape = SubResource("BoxShape3D_2mkum")
+
+[node name="climb136" type="CollisionShape3D" parent="climbable_branch" unique_id=644957165 groups=["ClimbableBranch", "climbable_branch"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102666, 22.2264, 10.206772)
+shape = SubResource("BoxShape3D_2mkum")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="climbable_branch" unique_id=1523659781 groups=["ClimbableBranch", "climbable_branch"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6040573, 4.5556083, -0.11230469)
@@ -152,4 +760,701 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.008374214, 0)
 shape = SubResource("CapsuleShape3D_lhudx")
 
 [node name="player" parent="." unique_id=489851307 instance=ExtResource("1_bk8ha")]
+<<<<<<< Updated upstream
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15998173, 3.2568035, 4.6100106)
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15998173, 19.866917, 4.6100106)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2096997615]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=316244245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1190834, 10.817545, 11.90518)
+shape = SubResource("BoxShape3D_8lcvq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D" unique_id=1083438508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.111866, 10.7688465, 11.845518)
+material_override = SubResource("StandardMaterial3D_2mf0b")
+mesh = SubResource("BoxMesh_i3te8")
+
+[node name="climbs" type="Node3D" parent="." unique_id=190085614]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="climbs" unique_id=1394188301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, -0.84100044, 9.527032)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="climbs" unique_id=1102770023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, -0.3926613, 10.459733)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="climbs" unique_id=122480143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, -0.31803662, 8.429757)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="climbs" unique_id=64884020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 0.13030252, 9.362458)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="climbs" unique_id=1808054185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 0.8269033, 9.591859)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="climbs" unique_id=1604488678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 1.2752424, 10.52456)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="climbs" unique_id=391227007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 1.1747835, 8.751666)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="climbs" unique_id=871127952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 1.6231227, 9.684367)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="climbs" unique_id=1463373733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, -0.84100044, 10.473107)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="climbs" unique_id=26758875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, -0.3926613, 11.405808)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="climbs" unique_id=569391275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, -0.31803662, 9.375833)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="climbs" unique_id=568036091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 0.13030252, 10.308534)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="climbs" unique_id=1518340258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 0.8269033, 10.537934)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="climbs" unique_id=1869563600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 1.2752424, 11.470635)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="climbs" unique_id=1316619127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 1.1747835, 9.6977415)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="climbs" unique_id=340484779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 1.6231227, 10.630443)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="climbs" unique_id=753071887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 1.7287978, 10.072655)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="climbs" unique_id=26308075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 2.177137, 11.005356)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="climbs" unique_id=1892391786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 2.2517617, 8.97538)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="climbs" unique_id=533941254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 2.7001007, 9.908081)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="climbs" unique_id=451120130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 3.3967016, 10.137482)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="climbs" unique_id=1890433079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 3.8450408, 11.070183)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="climbs" unique_id=122281254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 3.7445817, 9.297289)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="climbs" unique_id=870668195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 4.192921, 10.22999)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="climbs" unique_id=1486793390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 1.394926, 11.490767)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="climbs" unique_id=602683119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 1.843265, 12.423468)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D27" type="MeshInstance3D" parent="climbs" unique_id=2101656419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 1.9178898, 10.393492)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D28" type="MeshInstance3D" parent="climbs" unique_id=583431095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 2.3662288, 11.326193)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D29" type="MeshInstance3D" parent="climbs" unique_id=1514953860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 3.0628297, 11.5555935)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D30" type="MeshInstance3D" parent="climbs" unique_id=1866273153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 3.511169, 12.488295)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D31" type="MeshInstance3D" parent="climbs" unique_id=1995858870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 3.4107099, 10.715401)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D32" type="MeshInstance3D" parent="climbs" unique_id=2025001310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 3.8590493, 11.648102)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D33" type="MeshInstance3D" parent="climbs" unique_id=107041982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 3.6921496, 9.816785)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D34" type="MeshInstance3D" parent="climbs" unique_id=1754873576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 4.1404886, 10.749486)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D35" type="MeshInstance3D" parent="climbs" unique_id=1236854666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 4.2151136, 8.71951)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D36" type="MeshInstance3D" parent="climbs" unique_id=630127822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 4.663452, 9.652211)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D37" type="MeshInstance3D" parent="climbs" unique_id=282685248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 5.360053, 9.881612)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D38" type="MeshInstance3D" parent="climbs" unique_id=935060824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 5.8083925, 10.814313)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D39" type="MeshInstance3D" parent="climbs" unique_id=932002591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 5.7079334, 9.041419)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D40" type="MeshInstance3D" parent="climbs" unique_id=755826799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 6.156273, 9.97412)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D41" type="MeshInstance3D" parent="climbs" unique_id=543203664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 4.5086207, 10.999743)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D42" type="MeshInstance3D" parent="climbs" unique_id=1847999639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 4.9569597, 11.932445)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D43" type="MeshInstance3D" parent="climbs" unique_id=1794424242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 5.0315847, 9.902469)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D44" type="MeshInstance3D" parent="climbs" unique_id=464111855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 5.4799232, 10.83517)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D45" type="MeshInstance3D" parent="climbs" unique_id=1949838014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 6.176524, 11.06457)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D46" type="MeshInstance3D" parent="climbs" unique_id=1865843072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 6.6248636, 11.997272)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D47" type="MeshInstance3D" parent="climbs" unique_id=1942919023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 6.5244045, 10.224378)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D48" type="MeshInstance3D" parent="climbs" unique_id=2039201807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 6.972744, 11.157079)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D49" type="MeshInstance3D" parent="climbs" unique_id=142484171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 5.609002, 9.372475)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D50" type="MeshInstance3D" parent="climbs" unique_id=748335024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 6.057341, 10.305176)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D51" type="MeshInstance3D" parent="climbs" unique_id=638867076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 6.131966, 8.2752)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D52" type="MeshInstance3D" parent="climbs" unique_id=1885116614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 6.5803046, 9.207901)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D53" type="MeshInstance3D" parent="climbs" unique_id=1005244879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 7.2769055, 9.437302)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D54" type="MeshInstance3D" parent="climbs" unique_id=1626097803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 7.725245, 10.370003)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D55" type="MeshInstance3D" parent="climbs" unique_id=2094997363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 7.624786, 8.597109)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D56" type="MeshInstance3D" parent="climbs" unique_id=2112570252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 8.073126, 9.52981)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D57" type="MeshInstance3D" parent="climbs" unique_id=791128066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 7.3727837, 10.161902)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D58" type="MeshInstance3D" parent="climbs" unique_id=470226645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 7.8211226, 11.094604)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D59" type="MeshInstance3D" parent="climbs" unique_id=1759913576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 7.8957477, 9.064628)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D60" type="MeshInstance3D" parent="climbs" unique_id=1881251913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 8.344086, 9.997329)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D61" type="MeshInstance3D" parent="climbs" unique_id=1940858145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 9.040688, 10.226729)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D62" type="MeshInstance3D" parent="climbs" unique_id=231938278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 9.489027, 11.1594305)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D63" type="MeshInstance3D" parent="climbs" unique_id=1588286052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 9.388567, 9.386537)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D64" type="MeshInstance3D" parent="climbs" unique_id=1134357261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 9.836907, 10.319238)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D65" type="MeshInstance3D" parent="climbs" unique_id=413094637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 8.277645, 9.179752)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D66" type="MeshInstance3D" parent="climbs" unique_id=45491221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 8.725985, 10.112453)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D67" type="MeshInstance3D" parent="climbs" unique_id=1217987174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 8.80061, 8.082478)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D68" type="MeshInstance3D" parent="climbs" unique_id=660475786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 9.248947, 9.015179)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D69" type="MeshInstance3D" parent="climbs" unique_id=117463540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 9.945549, 9.244579)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D70" type="MeshInstance3D" parent="climbs" unique_id=153993823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 10.393888, 10.17728)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D71" type="MeshInstance3D" parent="climbs" unique_id=553280021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 10.293428, 8.4043865)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D72" type="MeshInstance3D" parent="climbs" unique_id=353373576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 10.741769, 9.337088)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D73" type="MeshInstance3D" parent="climbs" unique_id=2008184498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 11.063005, 10.456243)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D74" type="MeshInstance3D" parent="climbs" unique_id=255578514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 11.511345, 11.388944)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D75" type="MeshInstance3D" parent="climbs" unique_id=1387981860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 11.58597, 9.358968)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D76" type="MeshInstance3D" parent="climbs" unique_id=529626450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 12.0343075, 10.291669)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D77" type="MeshInstance3D" parent="climbs" unique_id=1712279580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 12.730909, 10.52107)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D78" type="MeshInstance3D" parent="climbs" unique_id=1241222968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 13.179249, 11.453771)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D79" type="MeshInstance3D" parent="climbs" unique_id=1827063844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 13.078789, 9.680877)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D80" type="MeshInstance3D" parent="climbs" unique_id=1594750920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 13.527129, 10.613578)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D81" type="MeshInstance3D" parent="climbs" unique_id=1814714267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 10.299023, 9.200562)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D82" type="MeshInstance3D" parent="climbs" unique_id=1643549470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 10.747362, 10.133263)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D83" type="MeshInstance3D" parent="climbs" unique_id=300500070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 10.821987, 8.103287)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D84" type="MeshInstance3D" parent="climbs" unique_id=1290991572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 11.270325, 9.035988)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D85" type="MeshInstance3D" parent="climbs" unique_id=1741840394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 11.966927, 9.2653885)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D86" type="MeshInstance3D" parent="climbs" unique_id=1124518738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 12.415266, 10.19809)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D87" type="MeshInstance3D" parent="climbs" unique_id=186384743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 12.314806, 8.425196)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D88" type="MeshInstance3D" parent="climbs" unique_id=412596991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 12.763146, 9.357897)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D89" type="MeshInstance3D" parent="climbs" unique_id=724081336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 12.345661, 9.200562)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D90" type="MeshInstance3D" parent="climbs" unique_id=1440555048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 12.794001, 10.133263)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D91" type="MeshInstance3D" parent="climbs" unique_id=1080348927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 12.868626, 8.103287)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D92" type="MeshInstance3D" parent="climbs" unique_id=1822808338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 13.316963, 9.035988)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D93" type="MeshInstance3D" parent="climbs" unique_id=313006416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 14.013565, 9.2653885)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D94" type="MeshInstance3D" parent="climbs" unique_id=2018756024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 14.461905, 10.19809)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D95" type="MeshInstance3D" parent="climbs" unique_id=582335671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 14.361444, 8.425196)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D96" type="MeshInstance3D" parent="climbs" unique_id=1844366565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 14.809785, 9.357897)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D97" type="MeshInstance3D" parent="climbs" unique_id=1928921030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 13.300703, 10.975206)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D98" type="MeshInstance3D" parent="climbs" unique_id=650809009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 13.7490425, 11.9079075)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D99" type="MeshInstance3D" parent="climbs" unique_id=205295235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 13.823668, 9.877932)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D100" type="MeshInstance3D" parent="climbs" unique_id=1759209930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 14.272005, 10.810633)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D101" type="MeshInstance3D" parent="climbs" unique_id=1993209965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 14.968607, 11.040033)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D102" type="MeshInstance3D" parent="climbs" unique_id=2023291590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 15.416946, 11.972734)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D103" type="MeshInstance3D" parent="climbs" unique_id=2024228031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 15.316486, 10.199841)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D104" type="MeshInstance3D" parent="climbs" unique_id=1058142112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 15.764827, 11.132542)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D105" type="MeshInstance3D" parent="climbs" unique_id=193717501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 14.4575205, 9.279755)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D106" type="MeshInstance3D" parent="climbs" unique_id=2121032363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 14.90586, 10.212456)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D107" type="MeshInstance3D" parent="climbs" unique_id=1726125317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 14.980485, 8.18248)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D108" type="MeshInstance3D" parent="climbs" unique_id=931466491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 15.4288225, 9.115181)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D109" type="MeshInstance3D" parent="climbs" unique_id=813503863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 16.125423, 9.344582)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D110" type="MeshInstance3D" parent="climbs" unique_id=650321677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 16.573765, 10.277283)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D111" type="MeshInstance3D" parent="climbs" unique_id=364562935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 16.473305, 8.504389)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D112" type="MeshInstance3D" parent="climbs" unique_id=296876031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 16.921644, 9.43709)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D113" type="MeshInstance3D" parent="climbs" unique_id=1937367671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 16.081516, 10.224487)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D114" type="MeshInstance3D" parent="climbs" unique_id=1341611478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 16.529854, 11.157188)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D115" type="MeshInstance3D" parent="climbs" unique_id=2097391973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 16.60448, 9.127213)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D116" type="MeshInstance3D" parent="climbs" unique_id=6188680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 17.052818, 10.059914)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D117" type="MeshInstance3D" parent="climbs" unique_id=1973687581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 17.749418, 10.289314)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D118" type="MeshInstance3D" parent="climbs" unique_id=1121233339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 18.19776, 11.222015)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D119" type="MeshInstance3D" parent="climbs" unique_id=1633806330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 18.0973, 9.449121)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D120" type="MeshInstance3D" parent="climbs" unique_id=1558017235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 18.545639, 10.381823)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D121" type="MeshInstance3D" parent="climbs" unique_id=61780574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 17.072926, 9.145723)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D122" type="MeshInstance3D" parent="climbs" unique_id=1465726023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 17.521263, 10.078424)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D123" type="MeshInstance3D" parent="climbs" unique_id=177270993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 17.59589, 8.048449)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D124" type="MeshInstance3D" parent="climbs" unique_id=333939862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 18.044228, 8.98115)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D125" type="MeshInstance3D" parent="climbs" unique_id=217258286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 18.740828, 9.21055)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D126" type="MeshInstance3D" parent="climbs" unique_id=1754403699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 19.189169, 10.143251)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D127" type="MeshInstance3D" parent="climbs" unique_id=1920606956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 19.088709, 8.3703575)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D128" type="MeshInstance3D" parent="climbs" unique_id=644916114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 19.537048, 9.303059)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D129" type="MeshInstance3D" parent="climbs" unique_id=79719356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 19.760622, 10.051092)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D130" type="MeshInstance3D" parent="climbs" unique_id=858989742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 20.20896, 10.983793)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D131" type="MeshInstance3D" parent="climbs" unique_id=608568339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 20.283587, 8.953817)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D132" type="MeshInstance3D" parent="climbs" unique_id=1101025160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 20.731924, 9.8865185)
+material_override = SubResource("StandardMaterial3D_2tl6e")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D133" type="MeshInstance3D" parent="climbs" unique_id=1571666634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 21.428524, 10.115919)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D134" type="MeshInstance3D" parent="climbs" unique_id=663988268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 21.876865, 11.04862)
+material_override = SubResource("StandardMaterial3D_2kbhw")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D135" type="MeshInstance3D" parent="climbs" unique_id=1347749974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 21.776405, 9.275726)
+material_override = SubResource("StandardMaterial3D_2mkum")
+mesh = SubResource("BoxMesh_1y21l")
+
+[node name="MeshInstance3D136" type="MeshInstance3D" parent="climbs" unique_id=993193843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.135452, 22.224745, 10.208427)
+material_override = SubResource("StandardMaterial3D_yvttg")
+mesh = SubResource("BoxMesh_1y21l")
+>>>>>>> Stashed changes

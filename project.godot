@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="MANGO MARCH"
+config/name="TISE SUMMIT"
 config/tags=PackedStringArray("jam", "main")
 run/main_scene="uid://duuc0c7ifkybu"
 config/features=PackedStringArray("4.7", "Forward Plus")

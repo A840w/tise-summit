@@ -36,7 +36,9 @@ extends CharacterBody3D
 @export var right_box: ColorRect
 @export var l_hand_icon: Label
 @export var r_hand_icon: Label
+@export var BlackScreen : ColorRect 
 signal interaction_text_changed(text: String)
+signal death_signal(text: String)
 
 var current_interaction_text := ""
 
@@ -127,7 +129,7 @@ func _ready():
 
 
 
-
+	BlackScreen.hide()
 	ui.show()
 	camera.current = true
 	can_control_at_all = true
@@ -219,15 +221,15 @@ func _physics_process(delta: float) -> void :
 	handle_climbing()
 
 
-	if not ground_cast.is_colliding():
-		no_ground_timer += delta
-		#rint(no_ground_timer)
+	# if not ground_cast.is_colliding():
+	# 	no_ground_timer += delta
+	# 	#rint(no_ground_timer)
 
-		if no_ground_timer >= 6.0:
-			death()
-			print("Player has died from falling out of the world.")
-	else:
-			no_ground_timer = 0.0
+	# 	if no_ground_timer >= 6.0:
+	# 		death()
+	# 		print("Player has died from falling out of the world.")
+	# else:
+	# 		no_ground_timer = 0.0
 
 
 
@@ -261,9 +263,12 @@ func _physics_process(delta: float) -> void :
 
 
 	if is_on_floor() and death_fall and not did_die:
+<<<<<<< Updated upstream
 		death()
+=======
+>>>>>>> Stashed changes
 		print("Player has died from falling.")
-
+		death("fell from height")
 
 	handle_interaction(delta)
 
@@ -275,6 +280,8 @@ func _physics_process(delta: float) -> void :
 
 
 
+# func death_signal ( reason : String):
+# 	EventBus.display_text.emit(reason, 3.0)
 
 func handle_climbing():
 	if rad_to_deg(camera.rotation.x) < -30:
@@ -471,19 +478,18 @@ func handle_interaction(delta: float):
 
 		#grab_clang_sound_left.play()
 
-func death():
+func death( reason: String = "unknown"):
 	#EventBus.player_death.emit()
-
-
-
-
-
-	can_control_at_all = false
+	if did_die:
+		return
 	did_die = true
-
+	death_signal.emit(reason)
+	can_control_at_all = false
+	BlackScreen.show()
 	DeathSound.play()
-
 	ui.hide()
+	await get_tree().create_timer(2.0).timeout
+	get_tree().paused = true
 
 
 
@@ -538,6 +544,9 @@ func _on_left_handcollison_body_entered(body: Node3D) -> void:
 			left_hand.texture = HAND_GRAB_VERTICAL
 
 		grab_clang_sound_left.play()
+
+
+
 
 
 
