@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b0ytjrf15fm61"]
+
+[ext_resource type="Texture2D" uid="uid://2xcba3xxap8t" path="res://assets/textures/PNG/Dark/texture_08.png" id="1_noaup"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_piutx"]
+albedo_texture = ExtResource("1_noaup")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_8lcvq"]
+size = Vector3(50, 1, 50)
+
+[node name="A!_climbing_test" type="Node3D" unique_id=568284884]
+
+[node name="floor" type="CSGMesh3D" parent="." unique_id=1474973689]
+material_override = SubResource("StandardMaterial3D_piutx")
+use_collision = true
+mesh = SubResource("BoxMesh_8lcvq")
